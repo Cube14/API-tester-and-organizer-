@@ -21,7 +21,7 @@ def test_identify_candidates():
 
     candidates = planner.identify_candidates()
 
-    assert len(candidates) == 4
+    assert len(candidates) == 5
 
     read_only_candidates = [
         candidate for candidate in candidates
@@ -36,7 +36,12 @@ def test_identify_candidates():
     assert len(read_only_candidates) == 3
     assert len(review_candidates) == 1
 
+    manual_candidates = [
+    candidate for candidate in candidates
+    if candidate["status"] == "manual_review_required"
+    ]
 
+    assert len(manual_candidates) == 1
 def test_candidates_contain_object_id_parameters():
     planner = create_planner()
 
@@ -51,7 +56,7 @@ def test_generate_test_plan():
 
     test_plan = planner.generate_test_plan()
 
-    assert len(test_plan) == 4
+    assert len(test_plan) == 5
 
     read_only_plans = [
         test for test in test_plan
@@ -64,7 +69,7 @@ def test_generate_test_plan():
     ]
 
     assert len(read_only_plans) == 3
-    assert len(manual_review_plans) == 1
+    assert len(manual_review_plans) == 2
 
     for test in read_only_plans:
         assert test["test_type"] == "cross_account_authorization"
@@ -73,9 +78,15 @@ def test_generate_test_plan():
 
     for test in manual_review_plans:
         assert test["test_type"] == "authorization_review"
-        assert test["status"] == "security_review_recommended"
+        assert test["execution_mode"] == "manual_review"
         assert len(test["steps"]) == 4
+    statuses = [
+    test["status"]
+    for test in manual_review_plans
+    ]
 
+    assert statuses.count("security_review_recommended") == 1
+    assert statuses.count("manual_review_required") == 1
 
 def test_public_endpoint_is_not_planned_for_automatic_testing():
     planner = create_planner()

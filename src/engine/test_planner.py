@@ -29,7 +29,8 @@ class TestPlanner:
             if method not in read_only_methods | review_methods:
                 continue
 
-            object_ids = self.parser.identify_object_parameters(
+            # Discover IDs in path, query and JSON request bodies.
+            object_ids = self.parser.identify_all_object_identifiers(
                 endpoint
             )
 
@@ -48,7 +49,7 @@ class TestPlanner:
                     "status": "security_review_recommended",
                     "execution_mode": "manual_review",
                     "reason": (
-                        "Endpoint contains object ID parameters "
+                        "Endpoint contains object ID identifiers "
                         "but has no declared authentication requirement."
                     )
                 })
@@ -59,7 +60,7 @@ class TestPlanner:
                     "execution_mode": "read_only_test",
                     "reason": (
                         "Authenticated read-only endpoint contains "
-                        "one or more object ID parameters."
+                        "one or more object ID identifiers."
                     )
                 })
 

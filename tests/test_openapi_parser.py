@@ -14,8 +14,8 @@ def test_endpoint_discovery():
     parser = OpenAPIParser(spec_path)
     endpoints = parser.extract_endpoints()
 
-    assert len(endpoints) == 6
-    
+    assert len(endpoints) == 7
+
     paths = [endpoint["path"] for endpoint in endpoints]
 
     assert "/api/users/{user_id}" in paths

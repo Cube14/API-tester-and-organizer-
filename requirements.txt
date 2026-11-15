@@ -4,3 +4,4 @@ PyYAML
 pytest
 openapi-spec-validator
 python-dotenv
+rich

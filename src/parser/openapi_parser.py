@@ -89,6 +89,7 @@ class OpenAPIParser:
 
             if isinstance(current, dict) and token in current:
                 current = current[token]
+
             elif isinstance(current, list) and token.isdigit():
                 index = int(token)
 
@@ -98,6 +99,7 @@ class OpenAPIParser:
                     )
 
                 current = current[index]
+
             else:
                 raise ValueError(
                     f"Reference could not be resolved: {reference}"
@@ -213,11 +215,33 @@ class OpenAPIParser:
         return list(merged.values())
 
     @staticmethod
+    def is_object_identifier(name):
+        """
+        Heuristically identify names that may represent object IDs.
+
+        Supports snake_case and camelCase naming conventions.
+        """
+
+        if not isinstance(name, str) or not name:
+            return False
+
+        normalized_name = re.sub(
+            r"([a-z0-9])([A-Z])",
+            r"\1_\2",
+            name
+        ).lower()
+
+        return (
+            normalized_name == "id"
+            or normalized_name.endswith("_id")
+        )
+
+    @staticmethod
     def identify_object_parameters(endpoint):
         """
         Identify parameters that may represent object identifiers.
 
-        Supports snake_case and camelCase naming conventions.
+        Supports path and query parameters.
         This is heuristic discovery, not vulnerability detection.
         """
 
@@ -231,29 +255,124 @@ class OpenAPIParser:
             if location not in {"path", "query"}:
                 continue
 
-            if not isinstance(name, str) or not name:
+            if not OpenAPIParser.is_object_identifier(name):
                 continue
 
-            # Convert camelCase into snake_case.
-            normalized_name = re.sub(
-                r"([a-z0-9])([A-Z])",
-                r"\1_\2",
-                name
-            ).lower()
+            candidates.append({
+                "name": name,
+                "location": location,
+                "required": parameter.get("required", False),
+                "schema": parameter.get("schema", {})
+            })
 
-            # Match "id" or names ending in "_id".
-            if (
-                normalized_name == "id"
-                or normalized_name.endswith("_id")
-            ):
+        return candidates
+
+    def identify_object_body_fields(self, endpoint):
+        """
+        Identify potential object identifiers in JSON request bodies.
+
+        Supports top-level JSON schema properties and local references.
+        Nested object traversal is intentionally not included yet.
+        """
+
+        candidates = []
+
+        request_body = endpoint.get("request_body")
+
+        if not request_body:
+            return candidates
+
+        # Resolve a referenced request body.
+        if isinstance(request_body, dict) and "$ref" in request_body:
+            request_body = self.resolve_local_reference(
+                request_body["$ref"]
+            )
+
+        if not isinstance(request_body, dict):
+            return candidates
+
+        content = request_body.get("content", {})
+
+        if not isinstance(content, dict):
+            return candidates
+
+        for media_type, media_definition in content.items():
+
+            # Support application/json and application/*+json.
+            normalized_media_type = media_type.split(";")[0].strip().lower()
+
+            is_json = (
+                normalized_media_type == "application/json"
+                or (
+                    normalized_media_type.startswith("application/")
+                    and normalized_media_type.endswith("+json")
+                )
+            )
+
+            if not is_json:
+                continue
+
+            if not isinstance(media_definition, dict):
+                continue
+
+            schema = media_definition.get("schema", {})
+
+            # Resolve a referenced schema.
+            if isinstance(schema, dict) and "$ref" in schema:
+                schema = self.resolve_local_reference(
+                    schema["$ref"]
+                )
+
+            if not isinstance(schema, dict):
+                continue
+
+            properties = schema.get("properties", {})
+
+            if not isinstance(properties, dict):
+                continue
+
+            required_fields = schema.get("required", [])
+
+            if not isinstance(required_fields, list):
+                required_fields = []
+
+            for name, property_schema in properties.items():
+
+                if not self.is_object_identifier(name):
+                    continue
+
+                # Avoid returning duplicate entries for the same field.
+                existing = any(
+                    candidate["name"] == name
+                    for candidate in candidates
+                )
+
+                if existing:
+                    continue
+
                 candidates.append({
                     "name": name,
-                    "location": location,
-                    "required": parameter.get("required", False),
-                    "schema": parameter.get("schema", {})
+                    "location": "body",
+                    "required": name in required_fields,
+                    "schema": (
+                        copy.deepcopy(property_schema)
+                        if isinstance(property_schema, dict)
+                        else {}
+                    ),
+                    "media_type": normalized_media_type
                 })
 
         return candidates
+
+    def identify_all_object_identifiers(self, endpoint):
+        """
+        Combine path/query parameter and JSON body discoveries.
+        """
+
+        return (
+            self.identify_object_parameters(endpoint)
+            + self.identify_object_body_fields(endpoint)
+        )
 
     @staticmethod
     def identify_endpoints_without_declared_security(endpoints):
@@ -268,13 +387,11 @@ class OpenAPIParser:
 
         for endpoint in endpoints:
 
-            # Skip endpoints that declare authentication.
             if endpoint.get("auth_required", False):
                 continue
 
-            # Identify possible object ID parameters.
-            object_ids = OpenAPIParser.identify_object_parameters(
-                endpoint
+            object_ids = (
+                OpenAPIParser.identify_object_parameters(endpoint)
             )
 
             # Only report endpoints with object ID candidates.
@@ -315,7 +432,7 @@ class OpenAPIParser:
             print(f"    Authentication: {auth_status}")
             print(f"    Parameters: {len(endpoint['parameters'])}")
 
-            object_ids = self.identify_object_parameters(endpoint)
+            object_ids = self.identify_all_object_identifiers(endpoint)
 
             if object_ids:
                 print("    Object ID Candidates:")
