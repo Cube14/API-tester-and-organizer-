@@ -16,6 +16,14 @@ components:
       scheme: bearer
       bearerFormat: JWT
 
+  parameters:
+    UserId:
+      name: user_id
+      in: path
+      required: true
+      schema:
+        type: integer
+
 security:
   - BearerAuth: []
 
@@ -28,11 +36,7 @@ paths:
       tags:
         - Users
       parameters:
-        - name: user_id
-          in: path
-          required: true
-          schema:
-            type: integer
+        - $ref: '#/components/parameters/UserId'
       responses:
         "200":
           description: User details
@@ -67,3 +71,30 @@ paths:
       responses:
         "200":
           description: API health status
+  /api/orders/{order_id}:
+    get:
+      summary: Retrieve order details
+      operationId: getOrder
+      security: []
+      parameters:
+        - name: order_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Order details
+  /api/orders:
+    get:
+      summary: Retrieve order by ID
+      operationId: getOrderByQuery
+      parameters:
+        - name: order_id
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Order details

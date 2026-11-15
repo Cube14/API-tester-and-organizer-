@@ -1,0 +1,23 @@
+{
+    "tool": "API Sentinel",
+    "scan_timestamp": "2026-11-15T18:55:23.333077+00:00",
+    "summary": {
+        "tests_performed": 2,
+        "findings_count": 1,
+        "potential_bola_findings": 1
+    },
+    "findings": [
+        {
+            "status": "potential_bola",
+            "severity": "High",
+            "endpoint": "/workshop/api/mechanic/mechanic_report",
+            "method": "GET",
+            "authenticated_account": "account_a",
+            "object_id": 7,
+            "status_code": 200,
+            "expected_owner": "account_a",
+            "actual_owner": "account_b",
+            "reason": "Object belongs to a different account."
+        }
+    ]
+}
