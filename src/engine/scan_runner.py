@@ -10,16 +10,14 @@ from rich.table import Table
 from src.auth.auth_manager import AuthManager
 from src.engine.bola_detector import BOLADetector
 from src.reporter.json_reporter import JSONReporter
+from src.reporter.html_reporter import HTMLReporter
 
 
 console = Console()
 
 
 def run_crapi_scan():
-    """
-    Run bidirectional, baseline-verified BOLA tests
-    against the authorized local crAPI lab.
-    """
+    """Run bidirectional, baseline-verified BOLA tests against crAPI."""
 
     load_dotenv()
 
@@ -36,7 +34,6 @@ def run_crapi_scan():
         }
     }
 
-    # Each target report is known to belong to the opposite account.
     test_cases = [
         {
             "attacker": "account_a",
@@ -68,11 +65,7 @@ def run_crapi_scan():
 
     auth_manager = AuthManager(timeout=10)
 
-    scan_results = []
-    tests_performed = 0
-
     try:
-        # Register both authorized test accounts.
         for account_name, details in accounts.items():
             auth_manager.register_account(
                 account_name,
@@ -80,21 +73,19 @@ def run_crapi_scan():
             )
 
         detector = BOLADetector(auth_manager)
+        tests_performed = 0
 
         console.print(
             Panel(
                 "[bold]Authorized local crAPI security assessment[/bold]\n\n"
-                "Each test first verifies that the legitimate owner "
-                "can retrieve the target report. A different account "
-                "is then tested against the same report.\n\n"
-                "[dim]Only the configured local lab is targeted.[/dim]",
+                "Each test verifies legitimate-owner access before "
+                "testing the same object from a different account.",
                 title="[bold red]API SENTINEL — BOLA SCAN[/bold red]",
                 border_style="red"
             )
         )
 
         for test_case in test_cases:
-
             attacker = test_case["attacker"]
             owner = test_case["owner"]
             report_id = test_case["report_id"]
@@ -108,14 +99,6 @@ def run_crapi_scan():
                 f"\n[bold cyan]Testing Report {report_id}[/bold cyan]"
             )
 
-            console.print(
-                f"[dim]Legitimate owner: {owner}[/dim]"
-            )
-
-            console.print(
-                f"[dim]Cross-account requester: {attacker}[/dim]"
-            )
-
             result = detector.test_cross_account_access(
                 attacker_account=attacker,
                 target_url=target_url,
@@ -127,28 +110,27 @@ def run_crapi_scan():
             )
 
             tests_performed += 1
-            scan_results.append(result)
 
             status = result.get("status", "unknown")
-            http_status = result.get("status_code")
+            status_style = {
+                "confirmed_bola": "bold red",
+                "potential_bola": "bold yellow",
+                "inconclusive": "bold magenta",
+                "not_confirmed": "green"
+            }.get(status, "white")
 
-            if status == "confirmed_bola":
-                status_style = "bold red"
-            elif status == "potential_bola":
-                status_style = "bold yellow"
-            elif status == "inconclusive":
-                status_style = "bold magenta"
-            else:
-                status_style = "green"
-
+            console.print(
+                f"Legitimate owner: {owner}"
+            )
+            console.print(
+                f"Cross-account requester: {attacker}"
+            )
             console.print(
                 f"Result: [{status_style}]{status}[/{status_style}]"
             )
-
             console.print(
-                f"HTTP status: {http_status if http_status is not None else 'Unavailable'}"
+                f"HTTP status: {result.get('status_code', 'Unavailable')}"
             )
-
             console.print(
                 "Baseline verified: "
                 + (
@@ -159,30 +141,31 @@ def run_crapi_scan():
                     else "[yellow]No[/yellow]"
                 )
             )
-
             console.print(
-                f"Explanation: {result.get('explanation', result.get('reason', 'No explanation available.'))}"
+                "Explanation: "
+                + result.get(
+                    "explanation",
+                    result.get("reason", "No explanation available.")
+                )
             )
 
-        # Build a clear scan summary.
         confirmed_count = sum(
-            1 for result in scan_results
+            1 for result in detector.results
             if result.get("status") == "confirmed_bola"
         )
 
         potential_count = sum(
-            1 for result in scan_results
+            1 for result in detector.results
             if result.get("status") == "potential_bola"
         )
 
         inconclusive_count = sum(
-            1 for result in scan_results
+            1 for result in detector.results
             if result.get("status") == "inconclusive"
         )
 
-        not_confirmed_count = sum(
-            1 for result in scan_results
-            if result.get("status") == "not_confirmed"
+        not_confirmed_count = tests_performed - (
+            confirmed_count + potential_count + inconclusive_count
         )
 
         summary = Table(
@@ -216,28 +199,31 @@ def run_crapi_scan():
         console.print()
         console.print(summary)
 
-        # Generate the JSON report.
-        reporter = JSONReporter()
+        # Generate both reports.
+        json_path = JSONReporter().generate_report(
+            findings=detector.results,
+            tests_performed=tests_performed
+        )
 
-        report_path = reporter.generate_report(
+        html_path = HTMLReporter().generate_report(
             findings=detector.results,
             tests_performed=tests_performed
         )
 
         console.print(
             Panel(
-                f"[bold green]JSON report generated successfully[/bold green]\n\n"
-                f"[white]{report_path}[/white]",
-                title="REPORT",
+                "[bold green]Reports generated successfully[/bold green]\n\n"
+                f"[white]JSON: {json_path}[/white]\n"
+                f"[white]HTML: {html_path}[/white]",
+                title="REPORTS",
                 border_style="green"
             )
         )
 
         console.print(
-            "\n[dim]Note: A potential finding is not a confirmed "
-            "vulnerability. Confirmation requires a successful "
-            "legitimate-owner baseline and matching ownership "
-            "evidence from the cross-account request.[/dim]"
+            "\n[dim]Findings are based on observed responses and "
+            "the configured ownership baseline. Review the evidence "
+            "before making remediation decisions.[/dim]"
         )
 
     finally:

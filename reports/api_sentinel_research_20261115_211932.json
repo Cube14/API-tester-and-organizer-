@@ -1,0 +1,1854 @@
+{
+    "tool": "API Sentinel",
+    "report_type": "passive_website_research",
+    "scan_timestamp": "2026-11-15T21:19:32.196097+00:00",
+    "browser_mode": "existing",
+    "initial_url": "https://www.youtube.com",
+    "summary": {
+        "pages_discovered": 4,
+        "api_endpoints_discovered": 168,
+        "resource_types_observed": {
+            "document": 31,
+            "other": 18,
+            "script": 330,
+            "stylesheet": 27,
+            "manifest": 2,
+            "font": 20,
+            "xhr": 79,
+            "fetch": 143,
+            "image": 145,
+            "media": 4,
+            "ping": 4
+        },
+        "active_security_tests_performed": 0
+    },
+    "pages": [
+        {
+            "url": "https://www.youtube.com/",
+            "forms": [
+                {
+                    "method": "GET",
+                    "action": "https://www.youtube.com/results",
+                    "input_types": [
+                        "text"
+                    ]
+                }
+            ],
+            "links": [
+                "https://developers.google.com/youtube",
+                "https://music.youtube.com/",
+                "https://www.youtube.com/",
+                "https://www.youtube.com/about/",
+                "https://www.youtube.com/about/copyright/",
+                "https://www.youtube.com/about/policies/",
+                "https://www.youtube.com/about/press/",
+                "https://www.youtube.com/ads/",
+                "https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ",
+                "https://www.youtube.com/channel/UC4R8DWoMoI7CAwX8_LjQHig",
+                "https://www.youtube.com/create_channel?channel_creation_token=[REDACTED]&upsell=[REDACTED]",
+                "https://www.youtube.com/creators/",
+                "https://www.youtube.com/feed/downloads",
+                "https://www.youtube.com/feed/history",
+                "https://www.youtube.com/feed/playlists",
+                "https://www.youtube.com/feed/storefront?bp=[REDACTED]",
+                "https://www.youtube.com/feed/subscriptions",
+                "https://www.youtube.com/feed/you",
+                "https://www.youtube.com/howyoutubeworks?utm_campaign=[REDACTED]&utm_source=[REDACTED]&utm_medium=[REDACTED]&utm_content=[REDACTED]&u=[REDACTED]",
+                "https://www.youtube.com/labs",
+                "https://www.youtube.com/new",
+                "https://www.youtube.com/playlist?list=[REDACTED]",
+                "https://www.youtube.com/premium",
+                "https://www.youtube.com/reporthistory",
+                "https://www.youtube.com/t/contact_us/",
+                "https://www.youtube.com/t/privacy",
+                "https://www.youtube.com/t/terms",
+                "https://www.youtubekids.com/?source=[REDACTED]"
+            ],
+            "button_count": 53,
+            "input_count": 3
+        },
+        {
+            "url": "https://www.youtube.com/feed/history",
+            "forms": [
+                {
+                    "method": "GET",
+                    "action": "https://www.youtube.com/results",
+                    "input_types": [
+                        "text"
+                    ]
+                }
+            ],
+            "links": [
+                "https://developers.google.com/youtube",
+                "https://music.youtube.com/",
+                "https://myaccount.google.com/u/0/?utm_source=[REDACTED]&tab=[REDACTED]&utm_medium=[REDACTED]&gar=[REDACTED]&sl=[REDACTED]&tab=[REDACTED]&hl=[REDACTED]",
+                "https://myaccount.google.com/u/0/yourdata/youtube?hl=[REDACTED]",
+                "https://myactivity.google.com/activitycontrols/youtube?hl=[REDACTED]&utm_medium=[REDACTED]&utm_source=[REDACTED]",
+                "https://myactivity.google.com/product/youtube_comments?hl=[REDACTED]&utm_medium=[REDACTED]&utm_source=[REDACTED]",
+                "https://myactivity.google.com/product/youtube_live_chat?hl=[REDACTED]&utm_medium=[REDACTED]&utm_source=[REDACTED]",
+                "https://myactivity.google.com/product/youtube_posts_activity?hl=[REDACTED]&utm_medium=[REDACTED]&utm_source=[REDACTED]",
+                "https://www.youtube.com/",
+                "https://www.youtube.com/about/",
+                "https://www.youtube.com/about/copyright/",
+                "https://www.youtube.com/about/policies/",
+                "https://www.youtube.com/about/press/",
+                "https://www.youtube.com/account",
+                "https://www.youtube.com/ads/",
+                "https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ",
+                "https://www.youtube.com/channel/UC4R8DWoMoI7CAwX8_LjQHig",
+                "https://www.youtube.com/create_channel?channel_creation_token=[REDACTED]",
+                "https://www.youtube.com/create_channel?channel_creation_token=[REDACTED]&upsell=[REDACTED]",
+                "https://www.youtube.com/creators/",
+                "https://www.youtube.com/feed/downloads",
+                "https://www.youtube.com/feed/history",
+                "https://www.youtube.com/feed/playlists",
+                "https://www.youtube.com/feed/storefront?bp=[REDACTED]",
+                "https://www.youtube.com/feed/subscriptions",
+                "https://www.youtube.com/feed/you",
+                "https://www.youtube.com/howyoutubeworks?utm_campaign=[REDACTED]&utm_source=[REDACTED]&utm_medium=[REDACTED]&utm_content=[REDACTED]&u=[REDACTED]",
+                "https://www.youtube.com/labs",
+                "https://www.youtube.com/logout",
+                "https://www.youtube.com/new",
+                "https://www.youtube.com/paid_memberships?ybp=[REDACTED]",
+                "https://www.youtube.com/playlist?list=[REDACTED]",
+                "https://www.youtube.com/premium",
+                "https://www.youtube.com/reporthistory",
+                "https://www.youtube.com/t/contact_us/",
+                "https://www.youtube.com/t/privacy",
+                "https://www.youtube.com/t/terms",
+                "https://www.youtubekids.com/?source=[REDACTED]"
+            ],
+            "button_count": 57,
+            "input_count": 3
+        },
+        {
+            "url": "https://mail.google.com/mail/u/0/",
+            "forms": [
+                {
+                    "method": "POST",
+                    "action": "https://mail.google.com/mail/u/0/",
+                    "input_types": [
+                        "hidden",
+                        "submit"
+                    ]
+                },
+                {
+                    "method": "GET",
+                    "action": "https://mail.google.com/mail/u/0/",
+                    "input_types": [
+                        "text",
+                        "text"
+                    ]
+                }
+            ],
+            "links": [
+                "https://mail.google.com/mail/u/0/",
+                "https://support.google.com/mail/answer/8767?src=[REDACTED]&hl=[REDACTED]",
+                "https://support.google.com/mail/answer/90559?hl=[REDACTED]",
+                "https://support.google.com/mail?p=[REDACTED]&authuser=[REDACTED]",
+                "https://www.google.co.in/intl/en/about/products?tab=[REDACTED]",
+                "https://www.google.com/",
+                "https://www.google.com/gmail/about/policy/"
+            ],
+            "button_count": 7,
+            "input_count": 6
+        },
+        {
+            "url": "chrome://new-tab-page/",
+            "forms": [],
+            "links": [],
+            "button_count": 0,
+            "input_count": 0
+        }
+    ],
+    "api_endpoints": [
+        {
+            "url": "https://accounts.google.com/ListAccounts?listPages=[REDACTED]&pid=[REDACTED]&gpsia=[REDACTED]&source=[REDACTED]&atic=[REDACTED]&mo=[REDACTED]&mn=[REDACTED]&hl=[REDACTED]&ts=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "accounts.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://accounts.google.com/RotateCookies",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "accounts.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://accounts.youtube.com/RotateCookies",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "accounts.youtube.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://addons-pa.clients6.google.com/$rpc/google.internal.apps.addons.v1.AddOnService/ListInstallations",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "addons-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://appsgrowthpromo-pa.clients6.google.com/v1/promotion/FetchRecommendations?key=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "appsgrowthpromo-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/punctual/prod-06-us/multi-watch/channel?VER=[REDACTED]&gsessionid=[REDACTED]&key=[REDACTED]&RID=[REDACTED]&CVER=[REDACTED]&zx=[REDACTED]&t=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "text/plain; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/punctual/prod-06-us/multi-watch/channel?VER=[REDACTED]&gsessionid=[REDACTED]&key=[REDACTED]&RID=[REDACTED]&SID=[REDACTED]&AID=[REDACTED]&CI=[REDACTED]&TYPE=[REDACTED]&zx=[REDACTED]&t=[REDACTED]",
+            "method": "GET",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "text/plain; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/punctual/prod-06-us/v1/chooseServer?key=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/u/0/_/DynamiteWebUi/data/batchexecute?rpcids=[REDACTED]&source-path=[REDACTED]&f.sid=[REDACTED]&bl=[REDACTED]&hl=[REDACTED]&soc-app=[REDACTED]&soc-platform=[REDACTED]&soc-device=[REDACTED]&_reqid=[REDACTED]&rt=[REDACTED]",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 3
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/get_emoji_variants_v2?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/get_frecent_emojis_v2?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/get_group?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/get_group_scoped_capabilities?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/get_smart_replies?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/get_user_settings?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/heartbeat?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/list_blocked_users?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/list_suggested_contacts?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/list_topics?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/list_unsent_messages?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://chat.google.com/u/0/api/paginated_world?c=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "chat.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/add_circle/v7/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/audio/v15/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/bag/v7/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/bell/v12/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/clapperboard/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/clock/v10/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/fashion/v4/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/flag/v11/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/gaming/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/gear/v10/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/home/v11/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/lightbulb/v4/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/mic/v15/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/news/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/pause/v9/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/play/v4/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/play_square_stack/v1/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/podcast/v6/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/search/v16/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/share/v13/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/subscriptions/v12/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/text_bubble/v4/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/thumb_down/v25/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/thumb_up/v24/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/trash_can/v11/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/trending/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/trophy/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/video/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/volume_max/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/volume_mute/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_fill_experimental/youtube_shorts/v11/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/add/v10/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/add_circle/v7/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/alert_bubble/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/arrow_down/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/arrow_in/v8/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/arrow_up/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/audio/v15/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/bag/v7/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/bell/v12/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/chevron_down/v10/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/chevron_right/v8/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/chevron_up/v10/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/clapperboard/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/clock/v10/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/copy/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/dollar_sign_circle/v12/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/download/v11/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/fashion/v4/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/flag/v11/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/gaming/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/gear/v10/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/globe/v5/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/help_circle/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/history/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/home/v11/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/keyboard/v4/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/lightbulb/v4/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/live/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/location_pin/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/menu/v1/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/mic/v15/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/news/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/overflow_horizontal/v6/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/overflow_vertical/v14/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/person_circle/v10/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/person_gear/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/person_shield/v8/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/person_square_stack/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/play/v4/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/play_circle/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/play_square_stack/v1/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/playlist/v5/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/podcast/v6/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/search/v16/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/share/v13/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/shorts/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/subscriptions/v12/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/text_bubble/v4/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/theme/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/thumb_down/v25/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/thumb_up/v24/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/translate/v4/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/trash_can/v11/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/trending/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/trophy/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/video/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/video_camera_add/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/volume_max/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/volume_mute/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/x/v11/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/youtube_shorts/v11/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/youtube_studio/v8/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "fonts.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://googleads.g.doubleclick.net/pagead/id",
+            "method": "GET",
+            "resource_type": "xhr",
+            "domain": "googleads.g.doubleclick.net",
+            "status": 302,
+            "content_type": "text/html; charset=UTF-8",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://googleads.g.doubleclick.net/pagead/id?slf_rd=[REDACTED]",
+            "method": "GET",
+            "resource_type": "xhr",
+            "domain": "googleads.g.doubleclick.net",
+            "status": 200,
+            "content_type": "application/json; charset=UTF-8",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://mail-ads.google.com/mail/u/0/adsfe/main_jspb?rt=[REDACTED]&client=[REDACTED]&pt=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "mail-ads.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://mail.google.com/_/scs/mail-static/_/ss/k=gmail.mainalt.svb1Gg8dO7Y.L.W.O/am=wAEAAAAAOB_O_2t6sQPL_Jfh5_vAf6y0viEMA__f-J9UgAItn5-j____76drAP4XhhiOP_JA7C8f3Aw4ZK8iIoALAHBb2z8CAAAAAAAAAAAAAAAAAADgmTaQgAU/d=1/excm=at/rs=AHGWq9BS-HaZTjeEN6ISU7LExjn7_S4Uhw?cb=[REDACTED]",
+            "method": "GET",
+            "resource_type": "xhr",
+            "domain": "mail.google.com",
+            "status": 200,
+            "content_type": "text/css; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://mail.google.com/cloudsearch/init?authuser=[REDACTED]&zx=[REDACTED]",
+            "method": "GET",
+            "resource_type": "xhr",
+            "domain": "mail.google.com",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://mail.google.com/mail/u/0/?ui=[REDACTED]&ik=[REDACTED]&jsver=[REDACTED]&cbl=[REDACTED]&rid=[REDACTED]&auto=[REDACTED]&view=[REDACTED]&_reqid=[REDACTED]&pcd=[REDACTED]&cfinact=[REDACTED]&mb=[REDACTED]&rt=[REDACTED]",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "mail.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://mail.google.com/mail/u/0/?ui=[REDACTED]&ik=[REDACTED]&jsver=[REDACTED]&cbl=[REDACTED]&rid=[REDACTED]&view=[REDACTED]&_reqid=[REDACTED]&nsc=[REDACTED]&mb=[REDACTED]&rt=[REDACTED]",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "mail.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://mail.google.com/mail/u/0/?ui=[REDACTED]&ik=[REDACTED]&jsver=[REDACTED]&cbl=[REDACTED]&rid=[REDACTED]&view=[REDACTED]&act=[REDACTED]&_reqid=[REDACTED]&at=[REDACTED]&pcd=[REDACTED]&cfinact=[REDACTED]&mb=[REDACTED]&rt=[REDACTED]",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "mail.google.com",
+            "status": 200,
+            "content_type": "text/plain; charset=UTF-8",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://mail.google.com/mail/u/0/jserror?script=[REDACTED]&error=[REDACTED]&line=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "mail.google.com",
+            "status": null,
+            "content_type": "unknown",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://mail.google.com/mail/u/0/logstreamz",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "mail.google.com",
+            "status": 204,
+            "content_type": "text/html; charset=utf-8",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://mail.google.com/mail/u/0/manifest.json",
+            "method": "GET",
+            "resource_type": "manifest",
+            "domain": "mail.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://mail.google.com/sync/u/0/i/fd?hl=[REDACTED]&c=[REDACTED]&rt=[REDACTED]&pt=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "mail.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 8
+        },
+        {
+            "url": "https://mail.google.com/sync/u/0/i/s?hl=[REDACTED]&c=[REDACTED]&rt=[REDACTED]&pt=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "mail.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 3
+        },
+        {
+            "url": "https://ogads-pa.clients6.google.com/$rpc/google.internal.onegoogle.asyncdata.v1.AsyncDataService/GetAsyncData",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "ogads-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 4
+        },
+        {
+            "url": "https://ogs.google.com/u/0/_/OneGoogleWidgetUi/data/batchexecute?rpcids=[REDACTED]&source-path=[REDACTED]&f.sid=[REDACTED]&bl=[REDACTED]&hl=[REDACTED]&xstg=[REDACTED]&soc-app=[REDACTED]&soc-platform=[REDACTED]&soc-device=[REDACTED]&_reqid=[REDACTED]&rt=[REDACTED]",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "ogs.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 3
+        },
+        {
+            "url": "https://people-pa.clients6.google.com/$rpc/google.internal.people.v2.minimal.InternalPeopleMinimalService/ListRankedTargets",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "people-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://peoplestack-pa.clients6.google.com/$rpc/peoplestack.PeopleStackAutocompleteService/Autocomplete",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "peoplestack-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://peoplestack-pa.clients6.google.com/$rpc/peoplestack.PeopleStackAutocompleteService/Lookup",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "peoplestack-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://peoplestack-pa.clients6.google.com/$rpc/social.people.backend.service.intelligence.proto.PeopleStackIntelligenceService/GetAssistiveFeatures",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "peoplestack-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://peoplestackwebexperiments-pa.clients6.google.com/$rpc/peoplestackwebexperiments.PeopleStackExperimentsService/GetExperimentFlags",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "peoplestackwebexperiments-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 3
+        },
+        {
+            "url": "https://play.google.com/log?format=[REDACTED]&hasfast=[REDACTED]&authuser=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "play.google.com",
+            "status": 200,
+            "content_type": "text/plain; charset=UTF-8",
+            "failed": false,
+            "request_count": 18
+        },
+        {
+            "url": "https://play.google.com/log?format=[REDACTED]&hasfast=[REDACTED]&authuser=[REDACTED]&auth=[REDACTED]",
+            "method": "POST",
+            "resource_type": "ping",
+            "domain": "play.google.com",
+            "status": null,
+            "content_type": "unknown",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://rr1---sn-hgn7rn7y.googlevideo.com/videoplayback?expire=[REDACTED]&ei=[REDACTED]&ip=[REDACTED]&id=[REDACTED]&itag=[REDACTED]&source=[REDACTED]&requiressl=[REDACTED]&mh=[REDACTED]&mm=[REDACTED]&mn=[REDACTED]&ms=[REDACTED]&mv=[REDACTED]&mvi=[REDACTED]&pl=[REDACTED]&ctier=[REDACTED]&initcwndbps=[REDACTED]&siu=[REDACTED]&spc=[REDACTED]&vprv=[REDACTED]&svpuc=[REDACTED]&mime=[REDACTED]&ns=[REDACTED]&cnr=[REDACTED]&ratebypass=[REDACTED]&dur=[REDACTED]&lmt=[REDACTED]&mt=[REDACTED]&fvip=[REDACTED]&c=[REDACTED]&txp=[REDACTED]&n=[REDACTED]&sparams=[REDACTED]&sig=[REDACTED]&lsparams=[REDACTED]&lsig=[REDACTED]",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "rr1---sn-hgn7rn7y.googlevideo.com",
+            "status": 403,
+            "content_type": "text/plain",
+            "failed": false,
+            "request_count": 3
+        },
+        {
+            "url": "https://rr1---sn-hgn7rn7y.googlevideo.com/videoplayback?expire=[REDACTED]&ei=[REDACTED]&ip=[REDACTED]&id=[REDACTED]&itag=[REDACTED]&source=[REDACTED]&requiressl=[REDACTED]&mh=[REDACTED]&mm=[REDACTED]&mn=[REDACTED]&ms=[REDACTED]&mv=[REDACTED]&mvi=[REDACTED]&pl=[REDACTED]&initcwndbps=[REDACTED]&siu=[REDACTED]&spc=[REDACTED]&vprv=[REDACTED]&svpuc=[REDACTED]&mime=[REDACTED]&ns=[REDACTED]&cnr=[REDACTED]&ratebypass=[REDACTED]&dur=[REDACTED]&lmt=[REDACTED]&mt=[REDACTED]&fvip=[REDACTED]&c=[REDACTED]&txp=[REDACTED]&n=[REDACTED]&sparams=[REDACTED]&sig=[REDACTED]&lsparams=[REDACTED]&lsig=[REDACTED]",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "rr1---sn-hgn7rn7y.googlevideo.com",
+            "status": 403,
+            "content_type": "text/plain",
+            "failed": false,
+            "request_count": 3
+        },
+        {
+            "url": "https://signaler-pa.clients6.google.com/punctual/multi-watch/channel?VER=[REDACTED]&gsessionid=[REDACTED]&key=[REDACTED]&RID=[REDACTED]&CVER=[REDACTED]&zx=[REDACTED]&t=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "signaler-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "text/plain; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://signaler-pa.clients6.google.com/punctual/multi-watch/channel?VER=[REDACTED]&gsessionid=[REDACTED]&key=[REDACTED]&RID=[REDACTED]&SID=[REDACTED]&AID=[REDACTED]&CI=[REDACTED]&TYPE=[REDACTED]&zx=[REDACTED]&t=[REDACTED]",
+            "method": "GET",
+            "resource_type": "xhr",
+            "domain": "signaler-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "text/plain; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://signaler-pa.clients6.google.com/punctual/multi-watch/channel?VER=[REDACTED]&gsessionid=[REDACTED]&key=[REDACTED]&SID=[REDACTED]&RID=[REDACTED]&AID=[REDACTED]&zx=[REDACTED]&t=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "signaler-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "text/plain; charset=utf-8",
+            "failed": false,
+            "request_count": 3
+        },
+        {
+            "url": "https://signaler-pa.clients6.google.com/punctual/v1/chooseServer?key=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "signaler-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://ssl.gstatic.com/dynamite/images/cleardot.gif?zx=[REDACTED]",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "ssl.gstatic.com",
+            "status": 200,
+            "content_type": "image/gif",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://studio.workspace.google.com/u/0/_/WorkflowsUi/data/batchexecute?rpcids=[REDACTED]&source-path=[REDACTED]&f.sid=[REDACTED]&bl=[REDACTED]&hl=[REDACTED]&soc-app=[REDACTED]&soc-platform=[REDACTED]&soc-device=[REDACTED]&_reqid=[REDACTED]&rt=[REDACTED]",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "studio.workspace.google.com",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://taskassist-pa.clients6.google.com/v2/taskassist:compose?alt=[REDACTED]&key=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "taskassist-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://waa-pa.clients6.google.com/$rpc/google.internal.waa.v1.Waa/Create",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "waa-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://waa-pa.clients6.google.com/$rpc/google.internal.waa.v1.Waa/Ping",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "waa-pa.clients6.google.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.gstatic.com/youtube/img/icons/web/youtube_fill/creator_studio_red_logo/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.gstatic.com/youtube/img/icons/web/youtube_fill/google/v1/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.gstatic.com/youtube/img/icons/web/youtube_fill/offline_no_content/v1/192px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.gstatic.com/youtube/img/icons/web/youtube_fill/unplugged_logo/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.gstatic.com/youtube/img/icons/web/youtube_fill/youtube_kids_round/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.gstatic.com/youtube/img/icons/web/youtube_fill/youtube_labs_red_logo/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.gstatic.com/youtube/img/icons/web/youtube_fill/youtube_music/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.gstatic.com/youtube/img/icons/web/youtube_fill/youtube_round/v2/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.gstatic.com/youtube/img/icons/web/youtube_fill/yt-logo-updated/v3/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.gstatic.com/youtube/img/icons/web/youtube_outline/refresh/v1/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.gstatic.com/youtube/img/icons/web/youtube_outline/waveform/v1/24px.svg",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.gstatic.com",
+            "status": 200,
+            "content_type": "image/svg+xml",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.youtube.com/",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "www.youtube.com",
+            "status": null,
+            "content_type": "unknown",
+            "failed": true,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.youtube.com/api/jnn/v1/GenerateIT",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "www.youtube.com",
+            "status": 200,
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.youtube.com/manifest.webmanifest",
+            "method": "GET",
+            "resource_type": "manifest",
+            "domain": "www.youtube.com",
+            "status": 200,
+            "content_type": "application/manifest+json; charset=utf-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/account/account_menu?prettyPrint=[REDACTED]",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "www.youtube.com",
+            "status": 200,
+            "content_type": "application/json; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/browse?prettyPrint=[REDACTED]",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "www.youtube.com",
+            "status": 200,
+            "content_type": "application/json; charset=UTF-8",
+            "failed": false,
+            "request_count": 3
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/feedback?prettyPrint=[REDACTED]",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "www.youtube.com",
+            "status": 200,
+            "content_type": "application/json; charset=UTF-8",
+            "failed": false,
+            "request_count": 2
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/guide?prettyPrint=[REDACTED]",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "www.youtube.com",
+            "status": 200,
+            "content_type": "application/json; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/log_event?alt=[REDACTED]",
+            "method": "POST",
+            "resource_type": "xhr",
+            "domain": "www.youtube.com",
+            "status": 200,
+            "content_type": "application/json; charset=UTF-8",
+            "failed": false,
+            "request_count": 4
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/notification/get_unseen_count?prettyPrint=[REDACTED]",
+            "method": "POST",
+            "resource_type": "fetch",
+            "domain": "www.youtube.com",
+            "status": 200,
+            "content_type": "application/json; charset=UTF-8",
+            "failed": false,
+            "request_count": 1
+        },
+        {
+            "url": "https://youtube.com/",
+            "method": "GET",
+            "resource_type": "fetch",
+            "domain": "youtube.com",
+            "status": 301,
+            "content_type": "application/binary",
+            "failed": false,
+            "request_count": 1
+        }
+    ],
+    "privacy": {
+        "cookies_saved": false,
+        "authorization_headers_saved": false,
+        "request_bodies_saved": false,
+        "response_bodies_saved": false,
+        "form_values_saved": false,
+        "query_values_redacted": true
+    }
+}

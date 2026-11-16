@@ -1,7 +1,7 @@
 
 requests
-PyYAML
-pytest
-openapi-spec-validator
 python-dotenv
+PyYAML
 rich
+pytest
+playwright

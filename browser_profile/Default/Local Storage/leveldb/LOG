@@ -1,0 +1,5 @@
+2026/11/16-02:37:07.259 a6c0 Creating DB E:\Project\API-Sentinel\browser_profile\Default\Local Storage\leveldb since it was missing.
+2026/11/16-02:37:07.267 a6c0 Reusing MANIFEST E:\Project\API-Sentinel\browser_profile\Default\Local Storage\leveldb/MANIFEST-000001
+2026/11/16-02:38:58.001 a6c0 Level-0 table #5: started
+2026/11/16-02:38:58.007 a6c0 Level-0 table #5: 107059 bytes OK
+2026/11/16-02:38:58.008 a6c0 Delete type=0 #3

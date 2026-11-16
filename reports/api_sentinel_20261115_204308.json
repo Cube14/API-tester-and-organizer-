@@ -1,0 +1,33 @@
+{
+    "tool": "API Sentinel",
+    "scan_timestamp": "2026-11-15T20:43:08.989806+00:00",
+    "summary": {
+        "tests_performed": 2,
+        "findings_count": 2,
+        "potential_bola_findings": 0
+    },
+    "findings": [
+        {
+            "status": "confirmed_bola",
+            "severity": "High",
+            "endpoint": "http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=7",
+            "method": "GET",
+            "authenticated_account": "account_a",
+            "object_id": 7,
+            "status_code": 200,
+            "ownership_mismatch": true,
+            "reason": "Object ownership does not match the requesting account."
+        },
+        {
+            "status": "confirmed_bola",
+            "severity": "High",
+            "endpoint": "http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=6",
+            "method": "GET",
+            "authenticated_account": "account_b",
+            "object_id": 6,
+            "status_code": 200,
+            "ownership_mismatch": true,
+            "reason": "Object ownership does not match the requesting account."
+        }
+    ]
+}

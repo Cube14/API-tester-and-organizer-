@@ -12,6 +12,7 @@ from rich.text import Text
 from src.engine.test_planner import TestPlanner
 from src.parser.openapi_parser import OpenAPIParser
 from src.engine.scan_runner import run_crapi_scan
+from src.discovery.research_runner import run_website_research
 
 
 console = Console()
@@ -25,7 +26,10 @@ def show_banner():
     banner = Text()
     banner.append("API ", style="bold white")
     banner.append("SENTINEL", style="bold red")
-    banner.append("\nINTELLIGENT API SECURITY SCANNER", style="dim white")
+    banner.append(
+        "\nINTELLIGENT API SECURITY SCANNER",
+        style="dim white"
+    )
 
     console.print()
     console.print(
@@ -63,7 +67,7 @@ def show_menu():
     table.add_row(
         "[1]",
         "Discover API",
-        "Analyze endpoints and object identifiers"
+        "Analyze OpenAPI endpoints and object identifiers"
     )
 
     table.add_row(
@@ -80,6 +84,12 @@ def show_menu():
 
     table.add_row(
         "[4]",
+        "Website Research",
+        "Browse authenticated websites and discover APIs"
+    )
+
+    table.add_row(
+        "[5]",
         "Exit",
         "Close API Sentinel"
     )
@@ -138,7 +148,6 @@ def show_test_plan():
     table.add_column("Status", style="green")
 
     for test in test_plan:
-
         identifiers = ", ".join(
             f"{item['name']} ({item['location']})"
             for item in test["object_id_parameters"]
@@ -195,8 +204,34 @@ def run_security_scan():
         return
 
     console.print()
-
     run_crapi_scan()
+
+
+def run_research():
+    """Start authenticated passive website research."""
+
+    console.print(
+        Panel(
+            "[bold]Website and API research[/bold]\n\n"
+            "API Sentinel will observe browser activity, "
+            "discover pages and identify API endpoints.\n\n"
+            "It will not run active security tests in this mode.",
+            title="WEBSITE RESEARCH",
+            border_style="cyan"
+        )
+    )
+
+    confirmation = Prompt.ask(
+        "Start browser research?",
+        choices=["y", "n"],
+        default="n"
+    )
+
+    if confirmation != "y":
+        console.print("[yellow]Research cancelled.[/yellow]")
+        return
+
+    run_website_research()
 
 
 def run_interactive():
@@ -209,7 +244,7 @@ def run_interactive():
 
         choice = Prompt.ask(
             "Select an option",
-            choices=["1", "2", "3", "4"]
+            choices=["1", "2", "3", "4", "5"]
         )
 
         console.print()
@@ -225,6 +260,9 @@ def run_interactive():
                 run_security_scan()
 
             elif choice == "4":
+                run_research()
+
+            elif choice == "5":
                 console.print(
                     Panel(
                         "[bold green]Thank you for using API Sentinel.[/bold green]",
@@ -234,7 +272,9 @@ def run_interactive():
                 break
 
         except KeyboardInterrupt:
-            console.print("\n[yellow]Operation interrupted.[/yellow]")
+            console.print(
+                "\n[yellow]Operation interrupted.[/yellow]"
+            )
 
         except Exception as error:
             console.print(
@@ -245,7 +285,7 @@ def run_interactive():
                 )
             )
 
-        if choice != "4":
+        if choice != "5":
             console.print()
             Prompt.ask(
                 "Press Enter to return to the main menu",
@@ -264,7 +304,7 @@ def main():
     cli.add_argument(
         "command",
         nargs="?",
-        choices=["endpoints", "scan", "plan"],
+        choices=["endpoints", "scan", "plan", "research"],
         help="Optional command to execute directly"
     )
 
@@ -281,6 +321,9 @@ def main():
 
     elif args.command == "plan":
         show_test_plan()
+
+    elif args.command == "research":
+        run_research()
 
 
 if __name__ == "__main__":

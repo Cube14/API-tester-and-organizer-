@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Sentinel | Security Assessment</title>
+<style>
+:root {
+    color-scheme: dark;
+    --background: #090909;
+    --surface: #121212;
+    --surface-2: #191919;
+    --border: #303030;
+    --text: #f4f4f4;
+    --muted: #999999;
+    --red: #e34242;
+    --green: #45c58a;
+    --yellow: #e7b84b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Inter, Segoe UI, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+header {
+    border-bottom: 1px solid var(--border);
+    padding: 30px 0;
+}
+
+.brand {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.brand span { color: var(--red); }
+
+.tagline {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 3px;
+}
+
+.hero {
+    padding: 54px 0 34px;
+}
+
+.eyebrow {
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    line-height: 1.15;
+    margin: 12px 0;
+}
+
+.subtitle, .muted {
+    color: var(--muted);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 26px 0 44px;
+}
+
+.stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 30px;
+}
+
+.stat span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.stat.danger strong { color: var(--red); }
+.stat.warning strong { color: var(--yellow); }
+.stat.success strong { color: var(--green); }
+
+.section-heading {
+    font-size: 20px;
+    margin: 0 0 18px;
+}
+
+.finding {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 22px;
+}
+
+.finding-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.finding h2 {
+    margin: 5px 0 18px;
+    font-size: 21px;
+}
+
+.status {
+    border: 1px solid currentColor;
+    border-radius: 30px;
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.confirmed { color: var(--red); }
+.potential { color: var(--yellow); }
+.inconclusive { color: #c18bfa; }
+.neutral { color: var(--muted); }
+
+.endpoint {
+    background: #080808;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    overflow-wrap: anywhere;
+}
+
+.endpoint code {
+    display: block;
+    color: #f0aaaa;
+    margin-top: 5px;
+}
+
+.field-label {
+    color: var(--muted);
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 16px 0 24px;
+}
+
+.detail {
+    background: var(--surface-2);
+    border-radius: 8px;
+    padding: 13px;
+    overflow-wrap: anywhere;
+}
+
+.detail strong {
+    display: block;
+    margin-top: 5px;
+}
+
+.report-section {
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+    margin-top: 17px;
+}
+
+.report-section h3, .recommendation h3 {
+    font-size: 14px;
+    margin: 0 0 7px;
+}
+
+.report-section p, .recommendation p {
+    color: #c7c7c7;
+    margin: 0;
+}
+
+.report-section ul {
+    color: #c7c7c7;
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.recommendation {
+    background: #211313;
+    border-left: 3px solid var(--red);
+    border-radius: 6px;
+    padding: 17px;
+    margin-top: 20px;
+}
+
+.empty-state {
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    color: var(--muted);
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    margin-top: 45px;
+    padding: 25px 0 40px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+@media (max-width: 700px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .details-grid { grid-template-columns: repeat(2, 1fr); }
+    .finding { padding: 18px; }
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="brand">API <span>SENTINEL</span></div>
+        <div class="tagline">DISCOVER. ANALYZE. TEST. PROTECT.</div>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <div class="eyebrow">SECURITY ASSESSMENT REPORT</div>
+        <h1>API Security Findings</h1>
+        <p class="subtitle">
+            Local authorized assessment · Generated 15 November 2026, 20:43:08 UTC
+        </p>
+        <p class="muted">
+            This report summarizes observed authorization behavior.
+            Findings are based on the evidence recorded by API Sentinel.
+        </p>
+    </section>
+
+    <section class="stats">
+        <div class="stat">
+            <strong>2</strong>
+            <span>Test cases executed</span>
+        </div>
+        <div class="stat danger">
+            <strong>2</strong>
+            <span>Confirmed BOLA findings</span>
+        </div>
+        <div class="stat warning">
+            <strong>0</strong>
+            <span>Potential BOLA findings</span>
+        </div>
+        <div class="stat success">
+            <strong>0</strong>
+            <span>Inconclusive tests</span>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-heading">Finding details</h2>
+        
+            <article class="finding">
+                <div class="finding-top">
+                    <div>
+                        <span class="eyebrow">FINDING 01</span>
+                        <h2>Broken Object Level Authorization</h2>
+                    </div>
+                    <span class="status confirmed">CONFIRMED BOLA</span>
+                </div>
+
+                <div class="endpoint">
+                    <span class="field-label">ENDPOINT</span>
+                    <code>GET http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=[REDACTED]</code>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail">
+                        <span class="field-label">OBJECT ID</span>
+                        <strong>7</strong>
+                    </div>
+                    <div class="detail">
+                        <span class="field-label">HTTP STATUS</span>
+                        <strong>200</strong>
+                    </div>
+                    <div class="detail">
+                        <span class="field-label">BASELINE</span>
+                        <strong>Verified</strong>
+                    </div>
+                    <div class="detail">
+                        <span class="field-label">OWNERSHIP MISMATCH</span>
+                        <strong>Detected</strong>
+                    </div>
+                </div>
+
+                <section class="report-section">
+                    <h3>What happened?</h3>
+                    <p>The legitimate owner successfully retrieved this object, and a different account also retrieved it. Both responses identified the same legitimate owner.</p>
+                </section>
+
+                <section class="report-section">
+                    <h3>Evidence</h3>
+                    <ul>
+                        <li>Cross-account HTTP status: 200</li>
+                        <li>Legitimate-owner baseline verified: Yes</li>
+                        <li>Ownership mismatch: Yes</li>
+                        <li>Ownership field inspected: vehicle.owner.email</li>
+                        <li>Response format: json</li>
+                        <li>Content type: application/json</li>
+                        <li>Baseline HTTP status: 200</li>
+                    </ul>
+                </section>
+
+                <section class="report-section">
+                    <h3>Technical observation</h3>
+                    <p>Object ownership does not match the requesting account.</p>
+                </section>
+
+                <section class="recommendation">
+                    <h3>Recommended remediation</h3>
+                    <p>Verify that the server checks object ownership against the authenticated user before returning the requested object.</p>
+                </section>
+            </article>
+            
+
+            <article class="finding">
+                <div class="finding-top">
+                    <div>
+                        <span class="eyebrow">FINDING 02</span>
+                        <h2>Broken Object Level Authorization</h2>
+                    </div>
+                    <span class="status confirmed">CONFIRMED BOLA</span>
+                </div>
+
+                <div class="endpoint">
+                    <span class="field-label">ENDPOINT</span>
+                    <code>GET http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=[REDACTED]</code>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail">
+                        <span class="field-label">OBJECT ID</span>
+                        <strong>6</strong>
+                    </div>
+                    <div class="detail">
+                        <span class="field-label">HTTP STATUS</span>
+                        <strong>200</strong>
+                    </div>
+                    <div class="detail">
+                        <span class="field-label">BASELINE</span>
+                        <strong>Verified</strong>
+                    </div>
+                    <div class="detail">
+                        <span class="field-label">OWNERSHIP MISMATCH</span>
+                        <strong>Detected</strong>
+                    </div>
+                </div>
+
+                <section class="report-section">
+                    <h3>What happened?</h3>
+                    <p>The legitimate owner successfully retrieved this object, and a different account also retrieved it. Both responses identified the same legitimate owner.</p>
+                </section>
+
+                <section class="report-section">
+                    <h3>Evidence</h3>
+                    <ul>
+                        <li>Cross-account HTTP status: 200</li>
+                        <li>Legitimate-owner baseline verified: Yes</li>
+                        <li>Ownership mismatch: Yes</li>
+                        <li>Ownership field inspected: vehicle.owner.email</li>
+                        <li>Response format: json</li>
+                        <li>Content type: application/json</li>
+                        <li>Baseline HTTP status: 200</li>
+                    </ul>
+                </section>
+
+                <section class="report-section">
+                    <h3>Technical observation</h3>
+                    <p>Object ownership does not match the requesting account.</p>
+                </section>
+
+                <section class="recommendation">
+                    <h3>Recommended remediation</h3>
+                    <p>Verify that the server checks object ownership against the authenticated user before returning the requested object.</p>
+                </section>
+            </article>
+            
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <strong>API SENTINEL</strong> · Automated API authorization assessment
+        <br>
+        Generated locally. Review findings and validate remediation
+        before making production security decisions.
+    </div>
+</footer>
+</body>
+</html>
