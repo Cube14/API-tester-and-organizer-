@@ -1,0 +1,826 @@
+{
+    "tool": "API Sentinel",
+    "report_type": "passive_website_research",
+    "report_version": "2.0",
+    "scan_timestamp": "2026-11-16T09:02:47.604163+00:00",
+    "browser_mode": "dedicated",
+    "target": {
+        "url": "http://localhost:8888/dashboard",
+        "hostname": "localhost"
+    },
+    "summary": {
+        "pages_discovered": 11,
+        "total_functional_api_endpoints": 15,
+        "first_party_api_endpoints": 13,
+        "same_site_api_endpoints": 0,
+        "third_party_api_endpoints": 2,
+        "background_traffic_endpoints": 0,
+        "total_observed_inventory_records": 15,
+        "active_security_tests_performed": 0
+    },
+    "classification_summary": {
+        "functional_apis": {
+            "authentication": 2,
+            "rest_api": 13
+        },
+        "background_traffic": {}
+    },
+    "response_status_summary": {
+        "200": 14,
+        "404": 1
+    },
+    "failed_requests_observed": 0,
+    "first_party_inventory": [
+        {
+            "url": "http://localhost:8888/identity/api/auth/login",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "authentication",
+            "endpoint_template": "/identity/api/auth/login",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/auth/verify",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "authentication",
+            "endpoint_template": "/identity/api/auth/verify",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/chatbot/genai/state",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/chatbot/genai/state",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/community/api/v2/community/posts/recent?limit=[REDACTED]&offset=[REDACTED]",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/community/api/v2/community/posts/recent",
+            "query_parameters": [
+                "limit",
+                "offset"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/user/dashboard",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/user/dashboard",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 3,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/user/videos/0",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/user/videos/{id}",
+            "query_parameters": [],
+            "status": 404,
+            "status_codes": [
+                404
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/vehicle/vehicles",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/vehicle/vehicles",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=[REDACTED]",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/mechanic/mechanic_report",
+            "query_parameters": [
+                "report_id"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/merchant/service_requests/M4625N1RAJR7191B0",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/merchant/service_requests/M4625N1RAJR7191B0",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/shop/orders",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/shop/orders",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/shop/orders/all?limit=[REDACTED]&offset=[REDACTED]",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/shop/orders/all",
+            "query_parameters": [
+                "limit",
+                "offset"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/shop/orders/return_order?order_id=[REDACTED]",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/shop/orders/return_order",
+            "query_parameters": [
+                "order_id"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/shop/products?limit=[REDACTED]&offset=[REDACTED]",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/shop/products",
+            "query_parameters": [
+                "limit",
+                "offset"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "same_site_inventory": [],
+    "third_party_inventory": [
+        {
+            "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "method": "POST",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=[REDACTED]",
+            "method": "GET",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/maps/api/mapsjs/gen_204",
+            "query_parameters": [
+                "csp_test"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 1,
+            "failed": true
+        }
+    ],
+    "background_traffic": [],
+    "primary_inventory": [
+        {
+            "url": "http://localhost:8888/identity/api/auth/login",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "authentication",
+            "endpoint_template": "/identity/api/auth/login",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/auth/verify",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "authentication",
+            "endpoint_template": "/identity/api/auth/verify",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/chatbot/genai/state",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/chatbot/genai/state",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/community/api/v2/community/posts/recent?limit=[REDACTED]&offset=[REDACTED]",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/community/api/v2/community/posts/recent",
+            "query_parameters": [
+                "limit",
+                "offset"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/user/dashboard",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/user/dashboard",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 3,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/user/videos/0",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/user/videos/{id}",
+            "query_parameters": [],
+            "status": 404,
+            "status_codes": [
+                404
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/vehicle/vehicles",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/vehicle/vehicles",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=[REDACTED]",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/mechanic/mechanic_report",
+            "query_parameters": [
+                "report_id"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/merchant/service_requests/M4625N1RAJR7191B0",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/merchant/service_requests/M4625N1RAJR7191B0",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/shop/orders",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/shop/orders",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/shop/orders/all?limit=[REDACTED]&offset=[REDACTED]",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/shop/orders/all",
+            "query_parameters": [
+                "limit",
+                "offset"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/shop/orders/return_order?order_id=[REDACTED]",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/shop/orders/return_order",
+            "query_parameters": [
+                "order_id"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/shop/products?limit=[REDACTED]&offset=[REDACTED]",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/shop/products",
+            "query_parameters": [
+                "limit",
+                "offset"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "external_inventory": [
+        {
+            "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "method": "POST",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=[REDACTED]",
+            "method": "GET",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/maps/api/mapsjs/gen_204",
+            "query_parameters": [
+                "csp_test"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 1,
+            "failed": true
+        }
+    ],
+    "pages": [
+        {
+            "url": "http://localhost:8888/dashboard",
+            "forms": [],
+            "links": [],
+            "button_count": 4,
+            "input_count": 1
+        },
+        {
+            "url": "http://localhost:8888/login",
+            "forms": [
+                {
+                    "method": "GET",
+                    "action": "http://localhost:8888/login",
+                    "input_types": [
+                        "text",
+                        "password"
+                    ]
+                }
+            ],
+            "links": [],
+            "button_count": 5,
+            "input_count": 2
+        },
+        {
+            "url": "http://localhost:8888/vehicle-service-dashboard?VIN=[REDACTED]",
+            "forms": [],
+            "links": [],
+            "button_count": 2,
+            "input_count": 1
+        },
+        {
+            "url": "http://localhost:8888/service-report?id=[REDACTED]",
+            "forms": [],
+            "links": [],
+            "button_count": 0,
+            "input_count": 0
+        },
+        {
+            "url": "http://localhost:8888/my-profile",
+            "forms": [],
+            "links": [],
+            "button_count": 6,
+            "input_count": 3
+        },
+        {
+            "url": "http://localhost:8888/change-email",
+            "forms": [
+                {
+                    "method": "GET",
+                    "action": "http://localhost:8888/change-email",
+                    "input_types": [
+                        "text"
+                    ]
+                }
+            ],
+            "links": [],
+            "button_count": 3,
+            "input_count": 2
+        },
+        {
+            "url": "http://localhost:8888/forum",
+            "forms": [],
+            "links": [],
+            "button_count": 5,
+            "input_count": 1
+        },
+        {
+            "url": "http://localhost:8888/new-post",
+            "forms": [
+                {
+                    "method": "GET",
+                    "action": "http://localhost:8888/new-post",
+                    "input_types": [
+                        "text"
+                    ]
+                }
+            ],
+            "links": [],
+            "button_count": 3,
+            "input_count": 2
+        },
+        {
+            "url": "http://localhost:8888/shop",
+            "forms": [],
+            "links": [],
+            "button_count": 6,
+            "input_count": 1
+        },
+        {
+            "url": "http://localhost:8888/past-orders",
+            "forms": [],
+            "links": [],
+            "button_count": 7,
+            "input_count": 1
+        },
+        {
+            "url": "http://localhost:8888/",
+            "forms": [],
+            "links": [],
+            "button_count": 5,
+            "input_count": 1
+        }
+    ],
+    "resource_types_observed": {
+        "other": 2,
+        "image": 27,
+        "xhr": 8,
+        "fetch": 17,
+        "document": 5,
+        "script": 28,
+        "stylesheet": 3,
+        "manifest": 1,
+        "font": 1
+    },
+    "privacy": {
+        "cookies_saved": false,
+        "authorization_headers_saved": false,
+        "request_bodies_saved": false,
+        "response_bodies_saved": false,
+        "form_values_saved": false,
+        "query_values_redacted": true
+    }
+}
