@@ -1,0 +1,709 @@
+{
+    "tool": "API Sentinel",
+    "report_type": "passive_website_research",
+    "report_version": "4.0",
+    "scan_timestamp": "2026-11-17T10:01:49.357804+00:00",
+    "browser_mode": "dedicated",
+    "target": {
+        "url": "http://localhost:8888/",
+        "hostname": "localhost"
+    },
+    "summary": {
+        "pages_discovered": 4,
+        "total_functional_api_endpoints": 9,
+        "first_party_api_endpoints": 4,
+        "same_site_api_endpoints": 0,
+        "unclassified_api_endpoints": 0,
+        "third_party_api_endpoints": 5,
+        "background_traffic_endpoints": 2,
+        "endpoints_with_object_identifiers": 0,
+        "unique_object_identifiers_observed": 0,
+        "object_identifier_observations": 0,
+        "potential_bola_candidates": 0,
+        "browser_discovery_candidates": 0,
+        "browser_discovery_manual_reviews_required": 0,
+        "confirmed_vulnerabilities": 0,
+        "active_security_tests_performed": 0
+    },
+    "classification_summary": {
+        "functional_apis": {
+            "authentication": 1,
+            "rest_api": 8
+        },
+        "background_traffic": {
+            "analytics": 2
+        }
+    },
+    "response_status_summary": {
+        "200": 9,
+        "204": 2
+    },
+    "failed_requests_observed": 0,
+    "first_party_inventory": [
+        {
+            "url": "http://localhost:8888/identity/api/auth/verify",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "authentication",
+            "endpoint_template": "/identity/api/auth/verify",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/chatbot/genai/state",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/chatbot/genai/state",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/user/dashboard",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/user/dashboard",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/vehicle/vehicles",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/vehicle/vehicles",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "same_site_inventory": [],
+    "unclassified_inventory": [],
+    "third_party_inventory": [
+        {
+            "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "method": "POST",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=[REDACTED]",
+            "method": "GET",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/maps/api/mapsjs/gen_204",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "csp_test"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.google.com/recaptcha/enterprise/clr?k=[REDACTED]",
+            "method": "POST",
+            "domain": "www.google.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/recaptcha/enterprise/clr",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "k"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/binary",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.google.com/recaptcha/enterprise/reload?k=[REDACTED]",
+            "method": "POST",
+            "domain": "www.google.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/recaptcha/enterprise/reload",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "k"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=utf-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.google.com/recaptcha/enterprise/userverify?k=[REDACTED]",
+            "method": "POST",
+            "domain": "www.google.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/recaptcha/enterprise/userverify",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "k"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=utf-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "background_traffic": [
+        {
+            "url": "https://www.googletagmanager.com/gtag/js?id=[REDACTED]&preconnect=[REDACTED]&type=[REDACTED]&qid=[REDACTED]",
+            "method": "GET",
+            "domain": "www.googletagmanager.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "analytics",
+            "endpoint_template": "/gtag/js",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "id",
+                "preconnect",
+                "qid",
+                "type"
+            ],
+            "status": 204,
+            "status_codes": [
+                204
+            ],
+            "content_type": "text/html",
+            "resource_type": "image",
+            "resource_types": [
+                "image"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.googletagmanager.com/gtm.js?id=[REDACTED]&preconnect=[REDACTED]&type=[REDACTED]&qid=[REDACTED]",
+            "method": "GET",
+            "domain": "www.googletagmanager.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "analytics",
+            "endpoint_template": "/gtm.js",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "id",
+                "preconnect",
+                "qid",
+                "type"
+            ],
+            "status": 204,
+            "status_codes": [
+                204
+            ],
+            "content_type": "text/html",
+            "resource_type": "image",
+            "resource_types": [
+                "image"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "object_identifier_findings": [],
+    "browser_discovery_test_plan": [],
+    "browser_discovery_test_plan_summary": {
+        "total_candidates": 0,
+        "first_party_candidates": 0,
+        "same_site_candidates": 0,
+        "read_only_candidates": 0,
+        "manual_review_required": 0,
+        "active_tests_performed": 0,
+        "confirmed_vulnerabilities": 0,
+        "methods": {}
+    },
+    "primary_inventory": [
+        {
+            "url": "http://localhost:8888/identity/api/auth/verify",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "authentication",
+            "endpoint_template": "/identity/api/auth/verify",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/chatbot/genai/state",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/chatbot/genai/state",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/user/dashboard",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/user/dashboard",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/vehicle/vehicles",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/vehicle/vehicles",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "external_inventory": [
+        {
+            "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "method": "POST",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=[REDACTED]",
+            "method": "GET",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/maps/api/mapsjs/gen_204",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "csp_test"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.google.com/recaptcha/enterprise/clr?k=[REDACTED]",
+            "method": "POST",
+            "domain": "www.google.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/recaptcha/enterprise/clr",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "k"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/binary",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.google.com/recaptcha/enterprise/reload?k=[REDACTED]",
+            "method": "POST",
+            "domain": "www.google.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/recaptcha/enterprise/reload",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "k"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=utf-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.google.com/recaptcha/enterprise/userverify?k=[REDACTED]",
+            "method": "POST",
+            "domain": "www.google.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/recaptcha/enterprise/userverify",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "k"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=utf-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "pages": [
+        {
+            "url": "http://localhost:8888/",
+            "forms": [],
+            "links": [],
+            "button_count": 5,
+            "input_count": 1
+        },
+        {
+            "url": "https://www.google.com/search?q=[REDACTED]&oq=[REDACTED]&gs_lcrp=[REDACTED]&sourceid=[REDACTED]&source=[REDACTED]&ie=[REDACTED]",
+            "forms": [],
+            "links": [],
+            "button_count": 0,
+            "input_count": 0
+        },
+        {
+            "url": "https://www.google.com/sorry/index?continue=[REDACTED]&q=[REDACTED]",
+            "forms": [
+                {
+                    "method": "POST",
+                    "action": "https://www.google.com/sorry/index",
+                    "input_types": [
+                        "hidden",
+                        "hidden"
+                    ]
+                }
+            ],
+            "links": [
+                "https://support.google.com/websearch/answer/86640",
+                "https://www.google.com/policies/terms/",
+                "https://www.google.com/sorry/index?continue=[REDACTED]&q=[REDACTED]"
+            ],
+            "button_count": 0,
+            "input_count": 2
+        },
+        {
+            "url": "https://www.google.com/search?q=[REDACTED]&oq=[REDACTED]&gs_lcrp=[REDACTED]&sourceid=[REDACTED]&source=[REDACTED]&ie=[REDACTED]&sei=[REDACTED]",
+            "forms": [
+                {
+                    "method": "GET",
+                    "action": "https://www.google.com/search",
+                    "input_types": [
+                        "hidden",
+                        "hidden",
+                        "hidden",
+                        "hidden",
+                        "hidden"
+                    ]
+                },
+                {
+                    "method": "GET",
+                    "action": "https://www.google.com/search",
+                    "input_types": [
+                        "hidden",
+                        "hidden",
+                        "hidden",
+                        "hidden",
+                        "hidden",
+                        "hidden",
+                        "text",
+                        "text",
+                        "submit"
+                    ]
+                }
+            ],
+            "links": [
+                "https://accounts.google.com/ServiceLogin?hl=[REDACTED]&passive=[REDACTED]&continue=[REDACTED]&ec=[REDACTED]",
+                "https://play.google.com/store/apps/details?id=[REDACTED]&hl=[REDACTED]",
+                "https://posts.google.com/claim/?mid=[REDACTED]",
+                "https://profile.google.com/cp/MgkvbS8wOWpjdnM?source=[REDACTED]&token=[REDACTED]&pane_nb_mode=[REDACTED]&hl=[REDACTED]",
+                "https://support.google.com/websearch/answer/181196?hl=[REDACTED]",
+                "https://support.google.com/youtube/?hl=[REDACTED]",
+                "https://www.google.co.in/intl/en/about/products?tab=[REDACTED]",
+                "https://www.google.com/goto?url=[REDACTED]&gsessionid=[REDACTED]",
+                "https://www.google.com/search?q=[REDACTED]&oq=[REDACTED]&gs_lcrp=[REDACTED]&sourceid=[REDACTED]&source=[REDACTED]&ie=[REDACTED]&sei=[REDACTED]",
+                "https://www.google.com/search?q=[REDACTED]&sca_esv=[REDACTED]&sxsrf=[REDACTED]&ei=[REDACTED]&start=[REDACTED]&sa=[REDACTED]&sstk=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/search?q=[REDACTED]&sca_esv=[REDACTED]&sxsrf=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/search?q=[REDACTED]&sca_esv=[REDACTED]&sxsrf=[REDACTED]&source=[REDACTED]&tbs=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/search?q=[REDACTED]&sca_esv=[REDACTED]&sxsrf=[REDACTED]&udm=[REDACTED]&source=[REDACTED]&fbs=[REDACTED]&vsint=[REDACTED]&aep=[REDACTED]&ntc=[REDACTED]&cs=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/search?sca_esv=[REDACTED]&sxsrf=[REDACTED]&q=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/search?sca_esv=[REDACTED]&sxsrf=[REDACTED]&q=[REDACTED]&si=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/search?sca_esv=[REDACTED]&sxsrf=[REDACTED]&q=[REDACTED]&stick=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/search?sca_esv=[REDACTED]&sxsrf=[REDACTED]&q=[REDACTED]&udm=[REDACTED]&source=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/search?sca_esv=[REDACTED]&sxsrf=[REDACTED]&si=[REDACTED]&q=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/search?sca_esv=[REDACTED]&sxsrf=[REDACTED]&udm=[REDACTED]&fbs=[REDACTED]&q=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/search?sca_esv=[REDACTED]&sxsrf=[REDACTED]&udm=[REDACTED]&fbs=[REDACTED]&q=[REDACTED]&ved=[REDACTED]&ictx=[REDACTED]",
+                "https://www.google.com/search?sca_esv=[REDACTED]&udm=[REDACTED]&sxsrf=[REDACTED]&q=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/webhp?hl=[REDACTED]&ictx=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]",
+                "https://www.google.com/webhp?hl=[REDACTED]&sa=[REDACTED]&ved=[REDACTED]"
+            ],
+            "button_count": 18,
+            "input_count": 14
+        }
+    ],
+    "resource_types_observed": {
+        "fetch": 8,
+        "image": 58,
+        "other": 10,
+        "document": 11,
+        "xhr": 8,
+        "script": 72,
+        "stylesheet": 8,
+        "font": 4,
+        "ping": 4
+    },
+    "privacy": {
+        "cookies_saved": false,
+        "authorization_headers_saved": false,
+        "request_bodies_saved": false,
+        "response_bodies_saved": false,
+        "form_values_saved": false,
+        "query_values_redacted": true,
+        "path_identifiers_saved": true,
+        "path_identifier_values_visible": true,
+        "browser_discovery_plan_contains_actual_path_ids": false,
+        "active_tests_performed": false
+    }
+}

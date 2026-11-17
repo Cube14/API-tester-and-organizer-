@@ -14,6 +14,7 @@ from rich.table import Table
 from src.browser.browser_manager import BrowserManager
 from src.browser.network_capture import NetworkCapture, sanitize_url
 from src.browser.page_discovery import PageDiscovery
+from src.engine.discovery_planner import BrowserDiscoveryPlanner
 
 
 console = Console()
@@ -28,7 +29,6 @@ BACKGROUND_CLASSIFICATIONS = {
 
 def classify_inventory(records):
     """Separate functional API endpoints from background traffic."""
-
     functional = []
     background = []
 
@@ -45,7 +45,6 @@ def classify_inventory(records):
 
 def get_origin(record):
     """Read the canonical origin field with compatibility fallback."""
-
     return record.get(
         "origin_category",
         record.get("origin", "unclassified")
@@ -57,7 +56,6 @@ def count_classifications(records):
         record.get("classification", "other")
         for record in records
     )
-
     return dict(sorted(counts.items()))
 
 
@@ -85,7 +83,6 @@ def count_failed_requests(records):
 
 def collect_identifier_findings(records):
     """Create endpoint-level findings for discovered path identifiers."""
-
     findings = []
 
     for record in records:
@@ -107,7 +104,7 @@ def collect_identifier_findings(records):
                     "authorization requires verification."
                 ),
                 "potential_bola_candidate": True,
-                "vulnerability_confirmed": False
+                "vulnerability_confirmed": False,
             })
 
     return findings
@@ -123,7 +120,7 @@ def display_inventory(title, records, border_style):
     table = Table(
         title=title,
         border_style=border_style,
-        expand=True
+        expand=True,
     )
 
     table.add_column("Method", width=8)
@@ -138,7 +135,7 @@ def display_inventory(title, records, border_style):
             endpoint.get("endpoint_template", "—"),
             endpoint.get("classification", "other"),
             get_origin(endpoint),
-            str(endpoint.get("status") or "—")
+            str(endpoint.get("status") or "—"),
         )
 
     console.print(table)
@@ -160,7 +157,7 @@ def display_identifier_findings(findings):
     table = Table(
         title="OBJECT IDENTIFIER INTELLIGENCE",
         border_style="yellow",
-        expand=True
+        expand=True,
     )
 
     table.add_column("Method", width=8)
@@ -175,7 +172,7 @@ def display_identifier_findings(findings):
             finding["endpoint_template"] or "—",
             finding["identifier_value"] or "—",
             finding["identifier_type"] or "unknown",
-            finding["origin"]
+            finding["origin"],
         )
 
     console.print(table)
@@ -188,7 +185,7 @@ def display_identifier_findings(findings):
             "Authorization must be verified using legitimate test accounts "
             "before reporting BOLA.",
             title="SECURITY OBSERVATION",
-            border_style="yellow"
+            border_style="yellow",
         )
     )
 
@@ -199,6 +196,95 @@ def display_identifier_findings(findings):
         )
 
 
+def display_discovery_plan(plan, summary):
+    """Display browser-discovered candidates without executing tests."""
+
+    console.print()
+    console.print(
+        Panel(
+            "[bold]Browser-discovered security test plan[/bold]\n\n"
+            "These candidates were identified from observed API traffic. "
+            "They require manual authorization and ownership review.\n\n"
+            "[yellow]No active security tests have been executed.[/yellow]",
+            title="DISCOVERY PLANNER",
+            border_style="yellow",
+        )
+    )
+
+    summary_table = Table(
+        title="DISCOVERY PLAN SUMMARY",
+        border_style="cyan",
+        expand=True,
+    )
+
+    summary_table.add_column("Metric")
+    summary_table.add_column("Count", justify="right")
+
+    summary_rows = [
+        ("Total candidates", summary.get("total_candidates", 0)),
+        ("First-party candidates", summary.get("first_party_candidates", 0)),
+        ("Same-site candidates", summary.get("same_site_candidates", 0)),
+        ("Read-only candidates", summary.get("read_only_candidates", 0)),
+        ("Manual review required", summary.get("manual_review_required", 0)),
+        ("Active tests performed", summary.get("active_tests_performed", 0)),
+        ("Confirmed vulnerabilities", summary.get("confirmed_vulnerabilities", 0)),
+    ]
+
+    for label, value in summary_rows:
+        summary_table.add_row(label, str(value))
+
+    console.print(summary_table)
+
+    if not plan:
+        console.print(
+            "[green]No browser-discovered security test candidates "
+            "require review.[/green]"
+        )
+        return
+
+    plan_table = Table(
+        title="BROWSER-DISCOVERED TEST CANDIDATES",
+        border_style="yellow",
+        expand=True,
+    )
+
+    plan_table.add_column("Method", width=8)
+    plan_table.add_column("Endpoint")
+    plan_table.add_column("Test type", width=25)
+    plan_table.add_column("Execution", width=18)
+    plan_table.add_column("Status", width=18)
+
+    for candidate in plan[:30]:
+        plan_table.add_row(
+            str(candidate.get("method", "—")),
+            str(candidate.get("endpoint", "—")),
+            str(candidate.get("recommended_test_type", "—")),
+            str(candidate.get("execution_mode", "manual_review")),
+            str(candidate.get("status", "review_required")),
+        )
+
+    console.print(plan_table)
+
+    if len(plan) > 30:
+        console.print(
+            f"[dim]Showing 30 of {len(plan)} candidates. "
+            "All candidates are included in the JSON report.[/dim]"
+        )
+
+    console.print(
+        Panel(
+            "[bold yellow]Manual review required[/bold yellow]\n\n"
+            "Confirm that the target is authorized for testing. "
+            "Verify authentication and object ownership before conducting "
+            "any active authorization tests.\n\n"
+            "Browser discovery does not establish BOLA or any other "
+            "security vulnerability.",
+            title="TEST EXECUTION SAFETY",
+            border_style="yellow",
+        )
+    )
+
+
 def run_website_research():
     """Run passive authenticated website and API research."""
 
@@ -207,22 +293,24 @@ def run_website_research():
             "[bold]Authenticated website research[/bold]\n\n"
             "First-party APIs receive priority. External APIs are "
             "retained separately.\n"
-            "Object identifiers are inspected for security relevance.\n\n"
+            "Object identifiers are inspected for security relevance.\n"
+            "A review-only security test plan is generated from "
+            "discovered API traffic.\n\n"
             "[yellow]No active security tests will be performed.[/yellow]",
             title="[bold red]API SENTINEL — RESEARCH MODE[/bold red]",
-            border_style="red"
+            border_style="red",
         )
     )
 
     mode = Prompt.ask(
         "Browser connection",
         choices=["dedicated", "existing"],
-        default="dedicated"
+        default="dedicated",
     )
 
     initial_url = Prompt.ask(
         "Initial website URL (blank uses current tab)",
-        default=""
+        default="",
     ).strip()
 
     if initial_url and not initial_url.startswith(
@@ -250,7 +338,7 @@ def run_website_research():
             page.goto(
                 initial_url,
                 wait_until="domcontentloaded",
-                timeout=60000
+                timeout=60000,
             )
 
         elif mode == "dedicated":
@@ -281,7 +369,7 @@ def run_website_research():
                 "will be inventoried separately.\n\n"
                 "[bold]Press Enter in this terminal when finished.[/bold]",
                 title="BROWSER RESEARCH ACTIVE",
-                border_style="green"
+                border_style="green",
             )
         )
 
@@ -295,7 +383,7 @@ def run_website_research():
 
         input_thread = threading.Thread(
             target=wait_for_user,
-            daemon=True
+            daemon=True,
         )
         input_thread.start()
 
@@ -344,7 +432,7 @@ def run_website_research():
             record for record in primary_functional
             if get_origin(record) not in {
                 "first_party",
-                "same_site"
+                "same_site",
             }
         ]
 
@@ -357,6 +445,26 @@ def run_website_research():
         all_functional = (
             first_party + same_site + unclassified + third_party
         )
+
+        # ---------------------------------------------------------
+        # Browser discovery security planning
+        # ---------------------------------------------------------
+
+        discovery_planner = BrowserDiscoveryPlanner(all_functional)
+
+        browser_discovery_test_plan = (
+            discovery_planner.generate_test_plan()
+        )
+
+        browser_discovery_plan_summary = (
+            discovery_planner.generate_summary(
+                browser_discovery_test_plan
+            )
+        )
+
+        # ---------------------------------------------------------
+        # Existing identifier intelligence
+        # ---------------------------------------------------------
 
         identifier_findings = collect_identifier_findings(
             all_functional
@@ -371,7 +479,7 @@ def run_website_research():
             (
                 finding["method"],
                 finding["domain"],
-                finding["endpoint_template"]
+                finding["endpoint_template"],
             )
             for finding in identifier_findings
         }
@@ -388,14 +496,14 @@ def run_website_research():
         report = {
             "tool": "API Sentinel",
             "report_type": "passive_website_research",
-            "report_version": "3.0",
+            "report_version": "4.0",
             "scan_timestamp": timestamp.isoformat(),
             "browser_mode": mode,
 
             "target": {
                 "url": sanitize_url(target_url)
                 if target_url else None,
-                "hostname": target_hostname
+                "hostname": target_hostname,
             },
 
             "summary": {
@@ -419,9 +527,20 @@ def run_website_research():
                 "potential_bola_candidates": len(
                     identifier_endpoints
                 ),
-                "confirmed_vulnerabilities": 0,
 
-                "active_security_tests_performed": 0
+                "browser_discovery_candidates": (
+                    browser_discovery_plan_summary.get(
+                        "total_candidates", 0
+                    )
+                ),
+                "browser_discovery_manual_reviews_required": (
+                    browser_discovery_plan_summary.get(
+                        "manual_review_required", 0
+                    )
+                ),
+
+                "confirmed_vulnerabilities": 0,
+                "active_security_tests_performed": 0,
             },
 
             "classification_summary": {
@@ -430,7 +549,7 @@ def run_website_research():
                 ),
                 "background_traffic": count_classifications(
                     background_traffic
-                )
+                ),
             },
 
             "response_status_summary": count_status_codes(
@@ -449,6 +568,12 @@ def run_website_research():
 
             "object_identifier_findings": identifier_findings,
 
+            # Browser-discovered review-only security plan.
+            "browser_discovery_test_plan": browser_discovery_test_plan,
+            "browser_discovery_test_plan_summary": (
+                browser_discovery_plan_summary
+            ),
+
             # Backward-compatible fields.
             "primary_inventory": primary_functional,
             "external_inventory": external_functional,
@@ -466,8 +591,10 @@ def run_website_research():
                 "form_values_saved": False,
                 "query_values_redacted": True,
                 "path_identifiers_saved": True,
-                "path_identifier_values_visible": True
-            }
+                "path_identifier_values_visible": True,
+                "browser_discovery_plan_contains_actual_path_ids": False,
+                "active_tests_performed": False,
+            },
         }
 
         output_dir = Path("reports")
@@ -483,13 +610,13 @@ def run_website_research():
 
         report_path.write_text(
             json.dumps(report, indent=4),
-            encoding="utf-8"
+            encoding="utf-8",
         )
 
         summary_table = Table(
             title="RESEARCH SUMMARY",
             border_style="red",
-            expand=True
+            expand=True,
         )
 
         summary_table.add_column("Metric")
@@ -505,18 +632,30 @@ def run_website_research():
             ("Functional API endpoints", len(all_functional)),
             (
                 "Endpoints with object identifiers",
-                len(identifier_endpoints)
+                len(identifier_endpoints),
             ),
             (
                 "Unique object identifiers",
-                len(unique_identifier_values)
+                len(unique_identifier_values),
             ),
             (
                 "Potential BOLA candidates",
-                len(identifier_endpoints)
+                len(identifier_endpoints),
+            ),
+            (
+                "Browser discovery candidates",
+                browser_discovery_plan_summary.get(
+                    "total_candidates", 0
+                ),
+            ),
+            (
+                "Manual reviews required",
+                browser_discovery_plan_summary.get(
+                    "manual_review_required", 0
+                ),
             ),
             ("Confirmed vulnerabilities", 0),
-            ("Active security tests", 0)
+            ("Active security tests", 0),
         ]
 
         for label, value in summary_rows:
@@ -528,7 +667,7 @@ def run_website_research():
         classification_table = Table(
             title="TRAFFIC CLASSIFICATION",
             border_style="cyan",
-            expand=True
+            expand=True,
         )
 
         classification_table.add_column("Classification")
@@ -539,48 +678,54 @@ def run_website_research():
         ).items():
             classification_table.add_row(
                 classification,
-                str(count)
+                str(count),
             )
 
         console.print(classification_table)
+
+        # Display the generated browser discovery plan.
+        display_discovery_plan(
+            browser_discovery_test_plan,
+            browser_discovery_plan_summary,
+        )
 
         console.print(
             Panel(
                 "[bold green]Research report generated[/bold green]\n\n"
                 f"{report_path}",
                 title="REPORT",
-                border_style="green"
+                border_style="green",
             )
         )
 
         display_inventory(
             "FIRST-PARTY API INVENTORY",
             first_party,
-            "green"
+            "green",
         )
 
         display_inventory(
             "SAME-SITE API INVENTORY",
             same_site,
-            "blue"
+            "blue",
         )
 
         display_inventory(
             "UNCLASSIFIED API INVENTORY",
             unclassified,
-            "yellow"
+            "yellow",
         )
 
         display_inventory(
             "THIRD-PARTY API INVENTORY",
             third_party,
-            "cyan"
+            "cyan",
         )
 
         display_inventory(
             "BACKGROUND TRAFFIC INVENTORY",
             background_traffic,
-            "yellow"
+            "yellow",
         )
 
         display_identifier_findings(identifier_findings)
@@ -594,7 +739,7 @@ def run_website_research():
         console.print(
             Panel(
                 f"[bold red]Research failed[/bold red]\n\n{error}",
-                border_style="red"
+                border_style="red",
             )
         )
 

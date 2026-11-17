@@ -1,0 +1,70 @@
+{
+    "tool": "API Sentinel",
+    "version": "1.0",
+    "report_type": "BOLA Security Scan",
+    "scan_timestamp": "2026-11-17T10:06:09.895169+00:00",
+    "summary": {
+        "tests_performed": 2,
+        "results_recorded": 2,
+        "confirmed_bola_findings": 2,
+        "potential_bola_findings": 0,
+        "inconclusive_tests": 0,
+        "not_confirmed_tests": 0,
+        "total_bola_findings": 2,
+        "confirmed_vulnerabilities": 2
+    },
+    "findings": [
+        {
+            "status": "confirmed_bola",
+            "severity": "High",
+            "finding_type": "BOLA",
+            "vulnerable": true,
+            "endpoint": "http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=%5BREDACTED%5D",
+            "method": "GET",
+            "authenticated_account": "account_a",
+            "object_id": 7,
+            "status_code": 200,
+            "ownership_mismatch": true,
+            "ownership_baseline_verified": true,
+            "reason": "Object ownership does not match the requesting account.",
+            "evidence": {
+                "http_status": 200,
+                "owner_field_found": true,
+                "ownership_mismatch": true,
+                "ownership_baseline_verified": true,
+                "baseline_http_status": 200,
+                "response_type": "json",
+                "content_type": "application/json",
+                "owner_field": "vehicle.owner.email"
+            },
+            "recommendation": "Verify that the server checks object-level authorization against the authenticated user before returning the object.",
+            "explanation": "The legitimate owner successfully retrieved this object, and a different account also retrieved the same requested resource. Both responses identified the same legitimate owner."
+        },
+        {
+            "status": "confirmed_bola",
+            "severity": "High",
+            "finding_type": "BOLA",
+            "vulnerable": true,
+            "endpoint": "http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=%5BREDACTED%5D",
+            "method": "GET",
+            "authenticated_account": "account_b",
+            "object_id": 6,
+            "status_code": 200,
+            "ownership_mismatch": true,
+            "ownership_baseline_verified": true,
+            "reason": "Object ownership does not match the requesting account.",
+            "evidence": {
+                "http_status": 200,
+                "owner_field_found": true,
+                "ownership_mismatch": true,
+                "ownership_baseline_verified": true,
+                "baseline_http_status": 200,
+                "response_type": "json",
+                "content_type": "application/json",
+                "owner_field": "vehicle.owner.email"
+            },
+            "recommendation": "Verify that the server checks object-level authorization against the authenticated user before returning the object.",
+            "explanation": "The legitimate owner successfully retrieved this object, and a different account also retrieved the same requested resource. Both responses identified the same legitimate owner."
+        }
+    ]
+}

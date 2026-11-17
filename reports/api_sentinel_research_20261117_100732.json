@@ -1,0 +1,1204 @@
+{
+    "tool": "API Sentinel",
+    "report_type": "passive_website_research",
+    "report_version": "4.0",
+    "scan_timestamp": "2026-11-17T10:07:32.214402+00:00",
+    "browser_mode": "dedicated",
+    "target": {
+        "url": "http://localhost:8888/",
+        "hostname": "localhost"
+    },
+    "summary": {
+        "pages_discovered": 4,
+        "total_functional_api_endpoints": 15,
+        "first_party_api_endpoints": 6,
+        "same_site_api_endpoints": 0,
+        "unclassified_api_endpoints": 0,
+        "third_party_api_endpoints": 9,
+        "background_traffic_endpoints": 8,
+        "endpoints_with_object_identifiers": 1,
+        "unique_object_identifiers_observed": 1,
+        "object_identifier_observations": 1,
+        "potential_bola_candidates": 1,
+        "browser_discovery_candidates": 2,
+        "browser_discovery_manual_reviews_required": 2,
+        "confirmed_vulnerabilities": 0,
+        "active_security_tests_performed": 0
+    },
+    "classification_summary": {
+        "functional_apis": {
+            "authentication": 1,
+            "rest_api": 14
+        },
+        "background_traffic": {
+            "analytics": 2,
+            "media_delivery": 4,
+            "telemetry": 2
+        }
+    },
+    "response_status_summary": {
+        "200": 17,
+        "206": 4,
+        "301": 1
+    },
+    "failed_requests_observed": 1,
+    "first_party_inventory": [
+        {
+            "url": "http://localhost:8888/identity/api/auth/verify",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "authentication",
+            "endpoint_template": "/identity/api/auth/verify",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/chatbot/genai/state",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/chatbot/genai/state",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/user/dashboard",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/user/dashboard",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/vehicle/vehicles",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/vehicle/vehicles",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=[REDACTED]",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/mechanic/mechanic_report",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "report_id"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/merchant/service_requests/M4625N1RAJR7191B0",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/merchant/service_requests/{object_id}",
+            "path_identifiers": [
+                {
+                    "position": 5,
+                    "value": "M4625N1RAJR7191B0",
+                    "type": "opaque_alphanumeric"
+                }
+            ],
+            "has_object_identifier": true,
+            "object_identifier_count": 1,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "same_site_inventory": [],
+    "unclassified_inventory": [],
+    "third_party_inventory": [
+        {
+            "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "method": "POST",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=[REDACTED]",
+            "method": "GET",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/maps/api/mapsjs/gen_204",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "csp_test"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://ogads-pa.clients6.google.com/$rpc/google.internal.onegoogle.asyncdata.v1.AsyncDataService/GetAsyncData",
+            "method": "POST",
+            "domain": "ogads-pa.clients6.google.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/$rpc/google.internal.onegoogle.asyncdata.v1.AsyncDataService/GetAsyncData",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/",
+            "method": "GET",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": null,
+            "status_codes": [],
+            "content_type": "unknown",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 1,
+            "failed": true
+        },
+        {
+            "url": "https://www.youtube.com/api/jnn/v1/GenerateIT",
+            "method": "POST",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/api/jnn/v1/GenerateIT",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/browse?prettyPrint=[REDACTED]",
+            "method": "POST",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/youtubei/v1/browse",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "prettyPrint"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/feedback?prettyPrint=[REDACTED]",
+            "method": "POST",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/youtubei/v1/feedback",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "prettyPrint"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/guide?prettyPrint=[REDACTED]",
+            "method": "POST",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/youtubei/v1/guide",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "prettyPrint"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://youtube.com/",
+            "method": "GET",
+            "domain": "youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 301,
+            "status_codes": [
+                301
+            ],
+            "content_type": "application/binary",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "background_traffic": [
+        {
+            "url": "https://googleads.g.doubleclick.net/pagead/id",
+            "method": "GET",
+            "domain": "googleads.g.doubleclick.net",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "analytics",
+            "endpoint_template": "/pagead/id",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://static.doubleclick.net/instream/ad_status.js",
+            "method": "GET",
+            "domain": "static.doubleclick.net",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "analytics",
+            "endpoint_template": "/instream/ad_status.js",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "text/javascript",
+            "resource_type": "script",
+            "resource_types": [
+                "script"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/s/search/audio/failure.mp3",
+            "method": "GET",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "media_delivery",
+            "endpoint_template": "/s/search/audio/failure.mp3",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 206,
+            "status_codes": [
+                206
+            ],
+            "content_type": "audio/mpeg",
+            "resource_type": "media",
+            "resource_types": [
+                "media"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/s/search/audio/no_input.mp3",
+            "method": "GET",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "media_delivery",
+            "endpoint_template": "/s/search/audio/no_input.mp3",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 206,
+            "status_codes": [
+                206
+            ],
+            "content_type": "audio/mpeg",
+            "resource_type": "media",
+            "resource_types": [
+                "media"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/s/search/audio/open.mp3",
+            "method": "GET",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "media_delivery",
+            "endpoint_template": "/s/search/audio/open.mp3",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 206,
+            "status_codes": [
+                206
+            ],
+            "content_type": "audio/mpeg",
+            "resource_type": "media",
+            "resource_types": [
+                "media"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/s/search/audio/success.mp3",
+            "method": "GET",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "media_delivery",
+            "endpoint_template": "/s/search/audio/success.mp3",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 206,
+            "status_codes": [
+                206
+            ],
+            "content_type": "audio/mpeg",
+            "resource_type": "media",
+            "resource_types": [
+                "media"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://play.google.com/log?format=[REDACTED]&hasfast=[REDACTED]",
+            "method": "POST",
+            "domain": "play.google.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "telemetry",
+            "endpoint_template": "/log",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "format",
+                "hasfast"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "text/plain; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/log_event?alt=[REDACTED]",
+            "method": "POST",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "telemetry",
+            "endpoint_template": "/youtubei/v1/log_event",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "alt"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "object_identifier_findings": [
+        {
+            "method": "GET",
+            "domain": "localhost",
+            "origin": "first_party",
+            "endpoint_template": "/workshop/api/merchant/service_requests/{object_id}",
+            "identifier_value": "M4625N1RAJR7191B0",
+            "identifier_type": "opaque_alphanumeric",
+            "identifier_position": 5,
+            "status": 200,
+            "classification": "rest_api",
+            "security_observation": "Direct object reference detected; authorization requires verification.",
+            "potential_bola_candidate": true,
+            "vulnerability_confirmed": false
+        }
+    ],
+    "browser_discovery_test_plan": [
+        {
+            "endpoint": "/workshop/api/mechanic/mechanic_report",
+            "domain": "localhost",
+            "method": "GET",
+            "source": "browser_discovery",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "object_id_parameters": [
+                {
+                    "name": "report_id",
+                    "location": "query",
+                    "type": "identifier_parameter"
+                }
+            ],
+            "authentication_requirement": "unknown",
+            "test_type": "cross_account_authorization",
+            "execution_mode": "manual_review",
+            "status": "review_required",
+            "steps": [
+                "Confirm that the endpoint belongs to an authorized test target.",
+                "Review the endpoint's authentication requirements.",
+                "Identify the object ownership field and legitimate owner.",
+                "Prepare two explicitly authorized test accounts.",
+                "Request an object owned by the legitimate account.",
+                "Record the baseline response and ownership evidence.",
+                "Request the same object as the second test account.",
+                "Compare access results and ownership evidence."
+            ],
+            "reason": "Browser discovery observed object identifiers, but authentication and ownership requirements have not been independently established.",
+            "active_testing_allowed": false,
+            "vulnerability_confirmed": false
+        },
+        {
+            "endpoint": "/workshop/api/merchant/service_requests/{object_id}",
+            "domain": "localhost",
+            "method": "GET",
+            "source": "browser_discovery",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "object_id_parameters": [
+                {
+                    "location": "path",
+                    "type": "opaque_alphanumeric",
+                    "position": 5
+                }
+            ],
+            "authentication_requirement": "unknown",
+            "test_type": "cross_account_authorization",
+            "execution_mode": "manual_review",
+            "status": "review_required",
+            "steps": [
+                "Confirm that the endpoint belongs to an authorized test target.",
+                "Review the endpoint's authentication requirements.",
+                "Identify the object ownership field and legitimate owner.",
+                "Prepare two explicitly authorized test accounts.",
+                "Request an object owned by the legitimate account.",
+                "Record the baseline response and ownership evidence.",
+                "Request the same object as the second test account.",
+                "Compare access results and ownership evidence."
+            ],
+            "reason": "Browser discovery observed object identifiers, but authentication and ownership requirements have not been independently established.",
+            "active_testing_allowed": false,
+            "vulnerability_confirmed": false
+        }
+    ],
+    "browser_discovery_test_plan_summary": {
+        "total_candidates": 2,
+        "first_party_candidates": 2,
+        "same_site_candidates": 0,
+        "read_only_candidates": 2,
+        "manual_review_required": 2,
+        "active_tests_performed": 0,
+        "confirmed_vulnerabilities": 0,
+        "methods": {
+            "GET": 2
+        }
+    },
+    "primary_inventory": [
+        {
+            "url": "http://localhost:8888/identity/api/auth/verify",
+            "method": "POST",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "authentication",
+            "endpoint_template": "/identity/api/auth/verify",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/chatbot/genai/state",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/chatbot/genai/state",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/user/dashboard",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/user/dashboard",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/identity/api/v2/vehicle/vehicles",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/identity/api/v2/vehicle/vehicles",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=[REDACTED]",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/mechanic/mechanic_report",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "report_id"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "http://localhost:8888/workshop/api/merchant/service_requests/M4625N1RAJR7191B0",
+            "method": "GET",
+            "domain": "localhost",
+            "origin_category": "first_party",
+            "origin": "first_party",
+            "classification": "rest_api",
+            "endpoint_template": "/workshop/api/merchant/service_requests/{object_id}",
+            "path_identifiers": [
+                {
+                    "position": 5,
+                    "value": "M4625N1RAJR7191B0",
+                    "type": "opaque_alphanumeric"
+                }
+            ],
+            "has_object_identifier": true,
+            "object_identifier_count": 1,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "external_inventory": [
+        {
+            "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "method": "POST",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=[REDACTED]",
+            "method": "GET",
+            "domain": "maps.googleapis.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/maps/api/mapsjs/gen_204",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "csp_test"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://ogads-pa.clients6.google.com/$rpc/google.internal.onegoogle.asyncdata.v1.AsyncDataService/GetAsyncData",
+            "method": "POST",
+            "domain": "ogads-pa.clients6.google.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/$rpc/google.internal.onegoogle.asyncdata.v1.AsyncDataService/GetAsyncData",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/",
+            "method": "GET",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": null,
+            "status_codes": [],
+            "content_type": "unknown",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 1,
+            "failed": true
+        },
+        {
+            "url": "https://www.youtube.com/api/jnn/v1/GenerateIT",
+            "method": "POST",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/api/jnn/v1/GenerateIT",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json+protobuf; charset=UTF-8",
+            "resource_type": "xhr",
+            "resource_types": [
+                "xhr"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/browse?prettyPrint=[REDACTED]",
+            "method": "POST",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/youtubei/v1/browse",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "prettyPrint"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/feedback?prettyPrint=[REDACTED]",
+            "method": "POST",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/youtubei/v1/feedback",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "prettyPrint"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 2,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://www.youtube.com/youtubei/v1/guide?prettyPrint=[REDACTED]",
+            "method": "POST",
+            "domain": "www.youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/youtubei/v1/guide",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [
+                "prettyPrint"
+            ],
+            "status": 200,
+            "status_codes": [
+                200
+            ],
+            "content_type": "application/json; charset=UTF-8",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        },
+        {
+            "url": "https://youtube.com/",
+            "method": "GET",
+            "domain": "youtube.com",
+            "origin_category": "third_party",
+            "origin": "third_party",
+            "classification": "rest_api",
+            "endpoint_template": "/",
+            "path_identifiers": [],
+            "has_object_identifier": false,
+            "object_identifier_count": 0,
+            "query_parameters": [],
+            "status": 301,
+            "status_codes": [
+                301
+            ],
+            "content_type": "application/binary",
+            "resource_type": "fetch",
+            "resource_types": [
+                "fetch"
+            ],
+            "request_count": 1,
+            "failed_count": 0,
+            "failed": false
+        }
+    ],
+    "pages": [
+        {
+            "url": "http://localhost:8888/",
+            "forms": [],
+            "links": [],
+            "button_count": 2,
+            "input_count": 0
+        },
+        {
+            "url": "http://localhost:8888/vehicle-service-dashboard?VIN=[REDACTED]",
+            "forms": [],
+            "links": [],
+            "button_count": 2,
+            "input_count": 1
+        },
+        {
+            "url": "http://localhost:8888/service-report?id=[REDACTED]",
+            "forms": [],
+            "links": [
+                "http://localhost:8888/workshop/api/mechanic/download_report?filename=[REDACTED]"
+            ],
+            "button_count": 2,
+            "input_count": 1
+        },
+        {
+            "url": "https://www.youtube.com/",
+            "forms": [
+                {
+                    "method": "GET",
+                    "action": "https://www.youtube.com/results",
+                    "input_types": [
+                        "text"
+                    ]
+                }
+            ],
+            "links": [
+                "https://accounts.google.com/ServiceLogin?service=[REDACTED]&uilel=[REDACTED]&passive=[REDACTED]&continue=[REDACTED]&hl=[REDACTED]&ec=[REDACTED]",
+                "https://www.youtube.com/",
+                "https://www.youtube.com/feed/subscriptions",
+                "https://www.youtube.com/feed/you",
+                "https://www.youtube.com/shorts/"
+            ],
+            "button_count": 53,
+            "input_count": 3
+        }
+    ],
+    "resource_types_observed": {
+        "fetch": 11,
+        "image": 37,
+        "other": 7,
+        "document": 6,
+        "xhr": 12,
+        "script": 74,
+        "stylesheet": 13,
+        "font": 2,
+        "manifest": 2,
+        "media": 4
+    },
+    "privacy": {
+        "cookies_saved": false,
+        "authorization_headers_saved": false,
+        "request_bodies_saved": false,
+        "response_bodies_saved": false,
+        "form_values_saved": false,
+        "query_values_redacted": true,
+        "path_identifiers_saved": true,
+        "path_identifier_values_visible": true,
+        "browser_discovery_plan_contains_actual_path_ids": false,
+        "active_tests_performed": false
+    }
+}
